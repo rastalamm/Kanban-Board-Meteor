@@ -1,0 +1,19 @@
+<template name="navbarLoggedIn">
+  <div id="navUserName">
+    <a href="{{pathFor route='profile'}}">
+      <h1>Name of User here</h1>
+    </a>
+  </div>
+  <div id="logoutButton">
+     {{> loginButtons}}
+  </div>
+</template>
+
+<template name="navbarLoggedOut">
+  <div id="navLogo">
+      <h1>Logo</h1>
+  </div>
+  <div id="loginButton">
+      {{> loginButtons}}
+  </div>
+</template>

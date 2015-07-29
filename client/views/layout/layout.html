@@ -1,9 +1,15 @@
 
   <template name='layout'>
     <div class="navbar">
-      {{> navbar}}
+    {{#if currentUser}}
+      {{> navbarLoggedIn}}
+    {{else}}
+      {{> navbarLoggedOut}}
+    {{/if}}
     </div>
-    <div class="dashboard">
+    {{> yield}}
+
+<!--     <div class="dashboard">
       {{> dashboard}}
-    </div>
+    </div> -->
   </template>

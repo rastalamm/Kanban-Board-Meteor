@@ -31,7 +31,9 @@ Template.newTaskTemplate.events({
         title: taskTitle,
         body: taskBody,
         status: 'todo',
-        added: Date.now()
+        added: Date.now(),
+        userId: Meteor.userId(),
+        username: Meteor.user().username
       })
     tmpl.find('#newTaskTitle').value = '';
     tmpl.find('#newTaskBody').value = '';
