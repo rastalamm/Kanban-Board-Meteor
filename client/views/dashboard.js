@@ -56,6 +56,7 @@ Template.editTaskTemplate.events({
     function deleteTask(){
       TaskCollection.remove({_id:taskId})
       $('.close-reveal-modal').click();
+      return;
 
     }
 
@@ -65,8 +66,10 @@ Template.editTaskTemplate.events({
 
       var newTaskTitle = $(event.target).parent().find('.editTaskTitle').val();
       var newTaskBody = $(event.target).parent().find('.editTaskBody').val();
+      var newStatus = $(event.target).parent().find('.editStatus').val();
+      console.log('new status: ',newStatus)
       console.log(newTaskBody,newTaskTitle)
-      TaskCollection.update({_id:taskId},{$set:{title:newTaskTitle, body: newTaskBody}})
+      TaskCollection.update({_id:taskId},{$set:{title:newTaskTitle, body: newTaskBody, status: newStatus}})
       $('.close-reveal-modal').click();
     };
   }

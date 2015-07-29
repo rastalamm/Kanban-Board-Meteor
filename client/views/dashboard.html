@@ -26,7 +26,7 @@
       {{/each}}
     </div>
     <div id="inProgressCol">
-      {{#each inProgTasks}}
+      {{#each inProgressTasks}}
         {{> task}}
       {{/each}}
     </div>
@@ -65,6 +65,11 @@
       <h2 id="modalTitle">Edit your task!</h2>
       <input type="text"  name='title' class="editTaskTitle">
       <input  type="text"  name='body' class="editTaskBody" >
+      <select class="editStatus">
+        <option value="todo">to do</option>
+        <option value="inProgress">in progress</option>
+        <option value="done">done</option>
+      </select>
       <input type="submit" value='edit' class="button editTaskSubmit">
       <button class='deleteTask'>delete</button>
       <a class="close-reveal-modal" aria-label="Close">&#215;</a>
