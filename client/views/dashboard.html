@@ -21,22 +21,32 @@
       {{> newTaskTemplate}}
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   </div>
-  <div class="row" id="toDoCol">
-    <div class="small-12 medium-6 columns taskHouse">
-      {{#each toDoTasks}}
-        {{> task}}
-      {{/each}}
+  <div class="dashboardOfTasks">
+
+    <div class="taskRow" id="toDoCol">
+      <div class=" taskHouse">
+        {{#each toDoTasks}}
+          {{> task}}
+        {{/each}}
+      </div>
     </div>
-    <div id="inProgressCol">
-      {{#each inProgressTasks}}
-        {{> task}}
-      {{/each}}
+
+    <div class="taskRow" id="inProgressCol">
+      <div class=" taskHouse">
+        {{#each inProgressTasks}}
+          {{> task}}
+        {{/each}}
+      </div>
     </div>
-    <div id="doneCol">
-      {{#each doneTasks}}
-        {{> task}}
-      {{/each}}
+
+    <div class="taskRow" id="doneCol">
+      <div class=" taskHouse">
+        {{#each doneTasks}}
+          {{> task}}
+        {{/each}}
+      </div>
     </div>
+
   </div>
  </template>
 
