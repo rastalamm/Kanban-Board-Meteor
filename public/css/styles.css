@@ -1,0 +1,21 @@
+.navbar{
+  width: 100%;
+  border: 1px solid black;
+  padding: 0 10%;
+}
+
+#navLogo{
+  display: inline-block;
+  margin-right: 25%;
+}
+
+#loginButton{
+  display: inline-block;
+  margin-left: 25%;
+}
+
+.mainBodyContent{
+  width: 100%;
+  border: 1px solid blue;
+  text-align: center;
+}
