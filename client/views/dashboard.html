@@ -1,8 +1,16 @@
-<template name="dashboard">
+<body>
   <div id="newTaskButton">new Task</div>
   <div class="dashContainer">
-    <div id="toDoCol">
-      <div class="taskHouse"></div>
+
+    {{> dashboard}}
+  </div>
+</body>
+
+
+
+<template name="dashboard">
+  <div id="toDoCol">
+    <div class="taskHouse">
       {{#each toDoTasks}}
         {{> task}}
       {{/each}}
@@ -18,3 +26,12 @@
       {{/each}}
     </div>
   </div>
+ </template>
+
+ <template name='task'>
+  <div class="taskTitle">{{title}}</div>
+  <div class="taskBody">{{body}}</div>
+  <div class="taskEdit">edit</div>
+  <div class="taskArrow"><img src="./public/images/rightarrow.svg"></div>
+
+ </template>

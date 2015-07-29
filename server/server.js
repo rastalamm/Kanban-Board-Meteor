@@ -6,8 +6,7 @@ Meteor.startup(function(){
         title: "Get Shit Done",
         body: "Don't forget to delete mi meow.",
         todo: true,
-        added: Date.now(),
-        user: Meteor.user()
+        added: Date.now()
       });
     }
 });
