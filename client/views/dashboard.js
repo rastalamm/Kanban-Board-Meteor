@@ -1,3 +1,4 @@
+
 Template.dashboard.rendered = function(){
   console.log('rendered');
 };
