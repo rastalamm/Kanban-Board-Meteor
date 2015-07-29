@@ -5,7 +5,7 @@ Meteor.startup(function(){
       TaskCollection.insert({
         title: "Get Shit Done",
         body: "Don't forget to delete mi meow.",
-        todo: true,
+        status: 'todo',
         added: Date.now()
       });
     }
