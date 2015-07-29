@@ -24,47 +24,42 @@
   <div class="dashboardOfTasks">
 
     <div class="taskRow" id="toDoCol">
-      <div class=" taskHouse">
-        {{#each toDoTasks}}
-          {{> task}}
-        {{/each}}
-      </div>
+      {{#each toDoTasks}}
+        {{> task}}
+      {{/each}}
     </div>
 
     <div class="taskRow" id="inProgressCol">
-      <div class=" taskHouse">
-        {{#each inProgressTasks}}
-          {{> task}}
-        {{/each}}
-      </div>
+      {{#each inProgressTasks}}
+        {{> task}}
+      {{/each}}
     </div>
 
     <div class="taskRow" id="doneCol">
-      <div class=" taskHouse">
-        {{#each doneTasks}}
-          {{> task}}
-        {{/each}}
-      </div>
+      {{#each doneTasks}}
+        {{> task}}
+      {{/each}}
     </div>
 
   </div>
  </template>
 
  <template name='task'>
-  <div class="taskTitle">
-    <h1>{{title}}</h1>
-  </div>
-  <div class="taskBody">
-    <p>{{body}}</p>
-  </div>
-  <div class='taskButtonRow'>
-    <div class='taskEditButton'>
-      {{> editTaskTemplate}}
+  <div class=" taskHouse">
+    <div class="taskTitle">
+      <h1>{{title}}</h1>
     </div>
-    <div class="taskArrow">
-      <img id="nextArrowImage" src="./images/rightarrow.svg">
+    <div class="taskBody">
+      <p>{{body}}</p>
     </div>
-
+    <div class='taskButtonRow'>
+      <div class='taskEditButton'>
+        {{> editTaskTemplate}}
+      </div>
+      <div class="taskArrow">
+        <img id="nextArrowImage" src="./images/rightarrow.svg">
+      </div>
+    </div>
   </div>
 
 
@@ -81,7 +76,7 @@
 
   <template name="editTaskTemplate">
     <a href='#' data-reveal-id="editTaskModal" class='editLink'>
-      <div class="taskEdit">edit</div>
+      <div class="taskEdit button">Edit</div>
     </a>
     <div id="editTaskModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
       <h2 id="modalTitle">Edit your task!</h2>

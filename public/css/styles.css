@@ -36,33 +36,57 @@
 }
 
 .dashboardOfTasks{
-
+  width: 100%;
 }
 
 .taskRow{
   width: 33%;
   border: 1px solid red;
-  display: inline-flex;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .taskHouse{
   width: 100%;
-  margin: auto;
+  height: 400px;
+  border: 1px solid black;
+  padding: 5% 8%;
+}
+
+
+
+.taskTitle{
   border: 1px solid black;
 }
 
-.taskButtonRow{
+.taskTitle > h1{
+  font-size: 1.3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
+.taskBody{
+  border: 1px solid black;
+  height: 150px;
+
+
+}
+
+
+.taskButtonRow{
+  padding-top: 2%
 }
 
 .taskEditButton{
   display: inline-block;
+  width: 45%;
 }
 
 .taskArrow{
   display: inline-block;
+  width: 45%;
 }
 
 #nextArrowImage{
-  width: 25%;
+  width: 40%;
 }
