@@ -81,3 +81,21 @@ Template.editTaskTemplate.events({
   // }
 
 });
+
+Template.task.events({
+  'click .moveTaskAlong' : function(evt, tmpl){
+    var currStatus = tmpl.data.status;
+    var taskId = tmpl.data._id;
+    switch(currStatus){
+      case 'todo':
+        $(tmpl.data.status).val('inProgress');
+        TaskCollection.update({_id:taskId},{$set:{status:'inProgress'}})
+        break;
+      case 'inProgress':
+        TaskCollection.update({_id:taskId},{$set:{status:'done'}})
+        break;
+    };
+  }
+
+
+});
