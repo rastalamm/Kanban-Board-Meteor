@@ -51,11 +51,21 @@
  </template>
 
  <template name='task'>
-  <div class="taskTitle">{{title}}</div>
-  <div class="taskBody">{{body}}</div>
+  <div class="taskTitle">
+    <h1>{{title}}</h1>
+  </div>
+  <div class="taskBody">
+    <p>{{body}}</p>
+  </div>
+  <div class='taskButtonRow'>
+    <div class='taskEditButton'>
+      {{> editTaskTemplate}}
+    </div>
+    <div class="taskArrow">
+      <img id="nextArrowImage" src="./images/rightarrow.svg">
+    </div>
 
-    {{> editTaskTemplate}}
-  <div class="taskArrow"><img src="./images/rightarrow.svg"></div>
+  </div>
 
 
 
