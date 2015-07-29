@@ -1,19 +1,16 @@
 
-Template.dashboard.rendered = function(){
+Template.navbar.rendered = function(){
   console.log('rendered');
 };
 
-Template.dashboard.created = function(){
+Template.navbar.created = function(){
   console.log('created');
 
 };
 
-Template.dashboard.destroyed = function(){
+Template.navbar.destroyed = function(){
   console.log('destroyed');
 };
 
-Template.dashboard.helpers({
-  toDoTasks: function(){ return TaskCollection.find({status: 'todo'}); },
-  inProgressTasks: function(){ return TaskCollection.find({status: 'inProgress'}); },
-  doneTasks: function(){ return TaskCollection.find({todo: 'done'}); }
+Template.navbar.helpers({
 });

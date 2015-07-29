@@ -1,15 +1,9 @@
 <!-- <body>
 
-  <a href="#" data-reveal-id="newTaskModal">
-    <button id="newTaskButton">new Task</button>
-  </a>
 
 
-  <div id="newTaskModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-    <h2 id="modalTitle">Add a task!</h2>
-      {{> newTaskTemplate}}
-    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-  </div>
+
+
 
   <div class="dashContainer">
     {{> dashboard}}
@@ -19,6 +13,14 @@
 
 
 <template name="dashboard">
+  <a href="#" data-reveal-id="newTaskModal">
+    <button id="newTaskButton">new Task</button>
+  </a>
+  <div id="newTaskModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <h2 id="modalTitle">Add a task!</h2>
+      {{> newTaskTemplate}}
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+  </div>
   <div class="row" id="toDoCol">
     <div class="small-12 medium-6 columns taskHouse">
       {{#each toDoTasks}}
