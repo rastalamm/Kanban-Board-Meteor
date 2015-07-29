@@ -32,6 +32,9 @@ Template.newTaskTemplate.events({
         status: 'todo',
         added: Date.now()
       })
+    tmpl.find('#newTaskTitle').value = '';
+    tmpl.find('#newTaskBody').value = '';
+
     } else{
       return;
     }
@@ -42,19 +45,33 @@ Template.newTaskTemplate.events({
 
 Template.editTaskTemplate.events({
   'click .editLink' : function(evt, tmpl){
-    console.log(tmpl.find('#editTaskTitle'))
-    tmpl.find('#editTaskTitle').value += this.title;
-    tmpl.find('#editTaskBody').value += tmpl.data.body;
-
-  },
-  'click #editTaskSubmit' : function(evt, tmpl){
-    console.log('gonigin isen')
     var taskId = tmpl.data._id;
-    console.log('taskId:',taskId)
-    var newTaskTitle = tmpl.find('#editTaskTitle').value;
-    var newTaskBody = tmpl.find('#editTaskBody').value;
-    TaskCollection.update({_id:taskId},{$set:{title:newTaskTitle, body: newTaskBody}})
-    $('.close-reveal-modal').click();
+
+    $('.editTaskTitle').val(this.title);
+    $('.editTaskBody').val(tmpl.data.body);
+
+    $('.deleteTask').click(deleteTask);
+    $('.editTaskSubmit').click(editSubmit);
+
+    function deleteTask(){
+      TaskCollection.remove({_id:taskId})
+      $('.close-reveal-modal').click();
+
+    }
+
+    function editSubmit(event){
+      console.log('taskId:',taskId)
+      console.log($(event.target).parent().find('.editTaskTitle').val(),'event')
+
+      var newTaskTitle = $(event.target).parent().find('.editTaskTitle').val();
+      var newTaskBody = $(event.target).parent().find('.editTaskBody').val();
+      console.log(newTaskBody,newTaskTitle)
+      TaskCollection.update({_id:taskId},{$set:{title:newTaskTitle, body: newTaskBody}})
+      $('.close-reveal-modal').click();
+    };
   }
+  // 'click .editTaskSubmit' : function(evt,tmpl){
+  //   console.log('were in')
+  // }
 
 });

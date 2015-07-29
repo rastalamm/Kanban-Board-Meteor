@@ -63,9 +63,10 @@
     </a>
     <div id="editTaskModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
       <h2 id="modalTitle">Edit your task!</h2>
-      <input type="text"  name='title' id="editTaskTitle">
-      <input  type="text"  name='body' id="editTaskBody" >
-      <input type="submit" value='edit' class="button" id='editTaskSubmit'>
+      <input type="text"  name='title' class="editTaskTitle">
+      <input  type="text"  name='body' class="editTaskBody" >
+      <input type="submit" value='edit' class="button editTaskSubmit">
+      <button class='deleteTask'>delete</button>
       <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   </div>
  </template>
