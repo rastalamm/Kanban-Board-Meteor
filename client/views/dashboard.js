@@ -15,7 +15,7 @@ Template.dashboard.destroyed = function(){
 Template.dashboard.helpers({
   toDoTasks: function(){ return TaskCollection.find({status: 'todo'}); },
   inProgressTasks: function(){ return TaskCollection.find({status: 'inProgress'}); },
-  doneTasks: function(){ return TaskCollection.find({todo: 'done'}); }
+  doneTasks: function(){ return TaskCollection.find({status: 'done'}); }
 });
 
 Template.editTaskTemplate.helpers({
