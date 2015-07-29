@@ -1,19 +1,19 @@
-Template.tasks.rendered = function(){
+Template.dashboard.rendered = function(){
 
 };
 
-Template.tasks.created = function(){
+Template.dashboard.created = function(){
 
 };
 
-Template.tasks.destroyed = function(){
+Template.dashboard.destroyed = function(){
 
 };
 
-Template.tasks.helpers({
+Template.dashboard.helpers({
 
 });
 
-Template.tasks.events({
+Template.dashboard.events({
 
 });
