@@ -1,5 +1,5 @@
 <body>
-  <div id="newTaskButton">new Task</div>
+  <button id="newTaskButton">new Task</button>
   <div class="dashContainer">
 
     {{> dashboard}}
@@ -10,7 +10,7 @@
 
 <template name="dashboard">
   <div class="row" id="toDoCol">
-    <div class="small-12 medium-6" class="taskHouse">
+    <div class="small-12 medium-6 columns taskHouse">
       {{#each toDoTasks}}
         {{> task}}
       {{/each}}
