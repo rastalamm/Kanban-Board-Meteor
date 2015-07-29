@@ -17,6 +17,26 @@ Template.dashboard.helpers({
   doneTasks: function(){ return TaskCollection.find({todo: 'done'}); }
 });
 
-Template.dashboard.events({
+Template.newTaskTemplate.events({
+  'click #addTaskSubmit' : function(evt, tmpl){
+    console.log('hello there')
+    var taskTitle = tmpl.find('#newTaskTitle').value;
+    var taskBody = tmpl.find('#newTaskBody').value;
+    if(taskTitle){
+      TaskCollection.insert({
+        title: taskTitle,
+        body: taskBody,
+        status: 'todo',
+        added: Date.now()
+      })
+    } else{
+      return;
+    }
+    $('.close-reveal-modal').click();
+
+
+
+
+  }
 
 });

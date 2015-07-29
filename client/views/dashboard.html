@@ -1,5 +1,15 @@
 <body>
-  <button id="newTaskButton">new Task</button>
+
+  <a href="#" data-reveal-id="newTaskModal">
+    <button id="newTaskButton">new Task</button>
+  </a>
+
+
+  <div id="newTaskModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <h2 id="modalTitle">Add a task!</h2>
+      {{> newTaskTemplate}}
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+  </div>
   <div class="dashContainer">
 
     {{> dashboard}}
@@ -34,4 +44,11 @@
   <div class="taskEdit">edit</div>
   <div class="taskArrow"><img src="./images/rightarrow.svg"></div>
 
+ </template>
+
+
+ <template name="newTaskTemplate">
+    <input type="text" placeholder='task title' name='title' id="newTaskTitle">
+    <input  required='true' type="text" placeholder='task description' name='body' id="newTaskBody">
+    <input type="submit" value='add' class="button" id='addTaskSubmit'>
  </template>
