@@ -1,6 +1,6 @@
-  Accounts.config({
-    passwordSignupFields: "USERNAME_ONLY"
-  });
+  // Accounts.config({
+  //   passwordSignupFields: "USERNAME_ONLY"
+  // });
 
 
 
