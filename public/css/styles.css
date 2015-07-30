@@ -51,7 +51,7 @@ margin-top: 8px
     right: -13px;
     width: 75px;
     height: 75px;
-    background-color: red;
+    background-color: firebrick;
     font-size: 4em;
     line-height: 63px;
     border-radius: 58%;
@@ -66,6 +66,7 @@ margin-top: 8px
   height: 125px;
   line-height: 109px;
   font-size: 6em;
+  border: 3px solid #FFFFFF;
   color: #FFFFFF;
 }
 
