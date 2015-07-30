@@ -102,17 +102,27 @@ Template.task.events({
     };
   },
   'keypress .taskHouse': function(evt, tmpl) {
+    // event.stopPropagation();
+    // event.preventDefault();
     event.target.blur();
+
     if (event.keyCode == 13) {
-      var newTaskTitle = $(event.target).find('.taskTitle').text();
-      var newTaskBody = $(event.target).find('.taskBody').text();
-      if(newTaskTitle){
-        TaskCollection.update({_id:tmpl.data._id},{$set:{title:newTaskTitle}});
-      }else if(newTaskBody){
-        TaskCollection.update({_id:tmpl.data._id},{$set:{body:newTaskBody}});
+      var newTaskTitle = $(event.target).text();
+      console.log(newTaskTitle)
+      var newTaskBody = $(event.target).text();
+      if(evt.target.className === 'taskTitle'){
+        if(newTaskTitle){
+          TaskCollection.update({_id:tmpl.data._id},{$set:{title:newTaskTitle}});
+        }else{
+          var oldTaskTitle = TaskCollection.find({_id:tmpl.data._id}).fetch()[0].title;
+          $(event.target).text(oldTaskTitle);
+        }
+      }else if(evt.target.className === 'taskBody'){
+        if(newTaskBody){
+          TaskCollection.update({_id:tmpl.data._id},{$set:{body:newTaskBody}});
+        }
       }
-        // event.blur();
-        event.stopPropagation();
+        // event.stopPropagation();
         return false;
     }
 }
