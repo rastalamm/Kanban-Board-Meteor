@@ -100,7 +100,20 @@ Template.task.events({
         TaskCollection.update({_id:taskId},{$set:{status:'done',complete:true}})
         break;
     };
-  }
+  },
+  'keypress .taskHouse': function(evt, tmpl) {
+    if (event.keyCode == 13) {
+      var newTaskTitle = $(event.target).find('.taskTitle').text();
+      var newTaskBody = $(event.target).find('.taskBody').text();
+      if(newTaskTitle){
+        TaskCollection.update({_id:tmpl.data._id},{$set:{title:newTaskTitle}});
+      }else if(newTaskBody){
+        TaskCollection.update({_id:tmpl.data._id},{$set:{body:newTaskBody}});
+      }
+        event.stopPropagation();
+        return false;
+    }
+}
 
 
 });

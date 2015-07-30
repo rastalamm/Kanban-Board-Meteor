@@ -55,12 +55,12 @@
 
  <template name='task'>
   <div class=" taskHouse">
-    <div class="taskTitle">
-      <h2>{{title}}</h2>
+    <div class="taskTitleContainer" contenteditable='true'>
+      <h2 class="taskTitle">{{title}}</h2>
     </div>
 
-    <div class="taskBody">
-      <p>{{body}}</p>
+    <div class="taskBodyContainer" contenteditable='true'>
+      <p class='taskBody'>{{body}}</p>
     </div>
     <div class='taskButtonRow'>
       <div class='taskEditButton'>
@@ -92,7 +92,7 @@
 
   <template name="editTaskTemplate">
     <a href='#' data-reveal-id="editTaskModal" class='editLink'>
-      <div class="taskEdit button">Edit</div>
+      <div class="taskEdit">Edit</div>
     </a>
     <div id="editTaskModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
       <h2 id="modalTitle">Edit your task!</h2>
