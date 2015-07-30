@@ -47,16 +47,16 @@ Template.profile.helpers({
 Template.profile.events({
   'keypress .profile_input': function(evt,tmpl){
     event.target.blur();
-
+    var newFirstName = $(event.target).parent().find('.firstName').text();
+    var newLastName = $(event.target).parent().find('.lastName').text();
 
     if (event.keyCode == 13) {
-      var newEntry = $(event.target).text();
       switch(evt.target.className){
         case 'firstName':
-          Meteor.users.update({_id:Meteor.userId()},{$set:{'profile.firstName':newEntry}})
+          Meteor.users.update({_id:Meteor.userId()},{$set:{'profile.firstName':newFirstName}})
           break;
         case 'lastName':
-          Meteor.users.update({_id:Meteor.userId()},{$set:{'profile.lastName':newEntry}})
+          Meteor.users.update({_id:Meteor.userId()},{$set:{'profile.lastName':newLastName}})
           break;
         // case 'email':
         //   var emailArray = Meteor.users.find({_id:Meteor.userId()}).fetch()[0].emails;
