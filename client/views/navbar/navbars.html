@@ -1,17 +1,16 @@
 <template name="navbarLoggedIn">
   <div class="row">
-    <div id="navUserName" class="small-12 medium-5 columns">
+    <div id="navUserNameBox" class="small-12 medium-5 columns">
       <a href="{{pathFor route='profile'}}">
-        <h1>{{username}}'s Kan Board</h1>
+        <h1 id='navUserName'>{{username}}'s Kan Board</h1>
       </a>
     </div>
     <div id="logoutButton" class="hide-for-small-only medium-7 columns">
       <a href="/dashboard">Dashboard</a>
       <a href="/profile">Profile</a>
-      <a href="#" class="logout">
+      <a href="/welcome" class="logout">
         Logout
       </a>
-       {{> loginButtons}}
     </div>
 
   </div>

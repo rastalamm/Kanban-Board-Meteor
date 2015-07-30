@@ -26,8 +26,13 @@ margin-top: 8px
   margin-right: 10%;
 }
 
-#navUserName{
+#navUserNameBox{
 
+}
+
+#navUserName{
+  font-size: 1.4em;
+  line-height: 70px;
 }
 
 #logoutButton{
@@ -167,3 +172,10 @@ margin-top: 8px
   background-repeat: no-repeat;
 }
 
+/*
+Welcome Page/Register / Login page
+*/
+
+.registerLoginHouse{
+
+}
