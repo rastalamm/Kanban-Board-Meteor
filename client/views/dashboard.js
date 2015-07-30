@@ -18,9 +18,7 @@ Template.dashboard.helpers({
   doneTasks: function(){ return TaskCollection.find({userId: Meteor.userId(), status: 'done'}); }
 });
 
-Template.editTaskTemplate.helpers({
 
-})
 
 Template.newTaskTemplate.events({
   'click #addTaskSubmit' : function(evt, tmpl){
@@ -31,6 +29,7 @@ Template.newTaskTemplate.events({
         title: taskTitle,
         body: taskBody,
         status: 'todo',
+        complete: false,
         added: Date.now(),
         userId: Meteor.userId(),
         username: Meteor.user().username
@@ -71,9 +70,14 @@ Template.editTaskTemplate.events({
       var newTaskTitle = $(event.target).parent().find('.editTaskTitle').val();
       var newTaskBody = $(event.target).parent().find('.editTaskBody').val();
       var newStatus = $(event.target).parent().find('.editStatus').val();
-      console.log('new status: ',newStatus)
-      console.log(newTaskBody,newTaskTitle)
-      TaskCollection.update({_id:taskId},{$set:{title:newTaskTitle, body: newTaskBody, status: newStatus}})
+
+      TaskCollection.update({_id:taskId},{$set:{title:newTaskTitle, body: newTaskBody, status: newStatus}});
+      if(newStatus === 'complete'){
+        TaskCollection.update({_id:taskId},{$set:{complete:true}});
+      }else{
+        TaskCollection.update({_id:taskId},{$set:{complete:false}});
+      }
+      console.log(tmpl.data)
       $('.close-reveal-modal').click();
     };
   }
@@ -93,7 +97,7 @@ Template.task.events({
         TaskCollection.update({_id:taskId},{$set:{status:'inProgress'}})
         break;
       case 'inProgress':
-        TaskCollection.update({_id:taskId},{$set:{status:'done'}})
+        TaskCollection.update({_id:taskId},{$set:{status:'done',complete:true}})
         break;
     };
   }

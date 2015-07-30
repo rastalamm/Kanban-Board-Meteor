@@ -68,7 +68,11 @@
       </div>
       <div class="taskArrow">
         <a href="" class="moveTaskAlong">
+        {{#if complete}}
+          <img id="statusImage" src="./images/tick.svg">
+        {{else}}
           <img id="statusImage" src="./images/rightarrow.svg">
+        {{/if}}
         </a>
       </div>
     </div>
