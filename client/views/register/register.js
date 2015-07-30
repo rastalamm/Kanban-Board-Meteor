@@ -10,8 +10,8 @@ Template.register.events({
         var username = event.target.username.value;
         var emailVar = event.target.registerEmail.value;
         var passwordVar = event.target.registerPassword.value;
-        var firstName = event.target.firstName.value;
-        var lastName = event.target.lastName.value;
+        var firstName = 'Click Me to Edit!';
+        var lastName = 'Click Me to Edit!';
         Accounts.createUser({
             username: username,
             email: emailVar,
