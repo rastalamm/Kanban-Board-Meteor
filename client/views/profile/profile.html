@@ -1,3 +1,62 @@
 <template name='profile'>
-  <h1>hello profile</h1>
+  <div class='profile_house'>
+
+    <div class="profile_top_row row">
+      <div id="profile_image" class="small-12 large-3 columns">
+        <img src="https://images.duckduckgo.com/iu/?u=http%3A%2F%2F4.bp.blogspot.com%2F_yn2EXgEvGbw%2FS4SztlovbqI%2FAAAAAAAAAt8%2F9W5yAf6NdEw%2Fs400%2Fcurly-mustache.jpg&f=1" alt="">
+      </div>
+      <div id="user_task_count" class="small-12 large-9 columns">
+        <div class="row">
+          <div class="task_count_box small-4 columns">
+            <h3>To Do</h3>
+            <p class="tasknumber">33</p>
+          </div>
+          <div class="task_count_box small-4 columns">
+            <h3>In Progress</h3>
+            <p class="tasknumber">100</p>
+          </div>
+          <div class="task_count_box small-4 columns">
+            <h3>Done</h3>
+            <p class="tasknumber">0</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile_main">
+      <div class="profile_main_row row">
+        <div class="profile_label small-2 columns">
+          <h2>Username</h2>
+        </div>
+        <div class="profile_input small-4 columns">
+          <p>{{username}}</p>
+        </div>
+      </div>
+      <div class="profile_main_row row">
+        <div class="profile_label small-2 columns">
+          <h2>Password</h2>
+        </div>
+        <div class="profile_input small-4 columns">
+          <p>{{password}}</p>
+        </div>
+      </div>
+      <div class="profile_main_row row">
+        <div class="profile_label small-2 columns">
+          <h2>Name</h2>
+        </div>
+        <div class="profile_input small-4 columns">
+          <p>{{name}}</p>
+        </div>
+      </div>
+      <div class="profile_main_row row">
+        <div class="profile_label small-2 columns">
+          <h2>Email</h2>
+        </div>
+        <div class="profile_input small-4 columns">
+          <p>{{email}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </template>

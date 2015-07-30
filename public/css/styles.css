@@ -1,11 +1,12 @@
 body{
-
+  background-image: url('../images/retina_wood.png');
+  background-size: cover;
 }
 
 .navbar{
   width: 100%;
-  border: 1px solid black;
   padding: 0 10%;
+  background-color: #FFFFFF;
 }
 
 #navLogo{
@@ -32,8 +33,7 @@ body{
   width: 100%;
   border: 1px solid blue;
   text-align: center;
-  background-image: url('../images/retina_wood.png');
-  background-size: cover;
+
 }
 
 #newTaskButton{
@@ -57,9 +57,10 @@ body{
 }
 
 .taskHouse{
-  width: 100%;
+  width: 300px;
   height: 300px;
   margin-bottom: 5%;
+  margin: auto;
   border: 1px solid black;
   padding: 5% 8%;
   background-image: url('../images/sticky_note.png');
@@ -88,7 +89,6 @@ body{
 
 }
 
-
 .taskButtonRow{
   padding-top: 2%
 }
@@ -103,6 +103,31 @@ body{
   width: 45%;
 }
 
-#nextArrowImage{
+#statusImage{
   width: 40%;
+}
+
+/*Profile Section*/
+
+.profile_top_row{
+  border: 1px solid red;
+}
+
+.profile_main{
+  text-align: left;
+}
+
+.profile_label > h2{
+  font-size: 1em;
+}
+
+.tasknumber{
+  width: 65px;
+  height: 65px;
+  line-height: 65px;
+  font-size: 1.5em;
+  margin: auto;
+  background-image: url('../images/sticky_note.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
