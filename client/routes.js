@@ -1,9 +1,8 @@
 
 // Router.onBeforeAction(function(pause) {
 //     if (!Meteor.user()) {
-//       console.log('srtainstrneitsrneio')
 //         // pause();
-//         Router.go('/welcome');
+//         Router.go('/register');
 //     }
 //     this.next();
 // }, {except: ['/register']});

@@ -1,12 +1,9 @@
 body{
-  background-image: url('../images/retina_wood.png');
+  background-image: url('../images/roughwood.jpeg');
   background-size: cover;
-  margin-top: 70px;
 }
 
 .navbar{
-  position: fixed;
-  top: 0;
   width: 100%;
   /*padding: 0 10%;*/
   /*padding-top: 25px;*/
@@ -56,6 +53,7 @@ margin-top: 8px
 
 .taskColHeader > h1 {
   font-size: 2em;
+  color: #FFFFFF;
 }
 
 .taskRow{
@@ -80,7 +78,6 @@ margin-top: 8px
 
 
 .taskTitle{
-  border: 1px solid black;
   padding: 0 2%;
 }
 
