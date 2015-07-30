@@ -1,14 +1,9 @@
-<template name='views'>
+<template name='welcomePage'>
 
-<div>
-   {{#if currentUser}}
-        <p>You're logged in.</p>
-        {{> dashboard}}
-    {{else}}
-        {{> register}}
-        {{> login}}
-    {{/if}}
-</div>
+  <div>
+     {{> register}}
+     {{> login}}
+  </div>
 </template>
 
 
@@ -23,9 +18,10 @@
     </form>
 </template>
 
+
 <template name="login">
     <form>
-        <input type="email" name="loginEmail">
+        <input type="text" name="username" placeholder="Username">
         <input type="password" name="loginPassword">
         <input type="submit" value="Login">
     </form>

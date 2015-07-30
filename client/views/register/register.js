@@ -1,6 +1,4 @@
-  // Accounts.config({
-  //   passwordSignupFields: "USERNAME_ONLY"
-  // });
+
 
 
 
@@ -29,9 +27,9 @@ Template.register.events({
 Template.login.events({
     'submit form': function(event){
         event.preventDefault();
-        var emailVar = event.target.loginEmail.value;
+        var username = event.target.username.value;
         var passwordVar = event.target.loginPassword.value;
-        Meteor.loginWithPassword(emailVar, passwordVar);
+        Meteor.loginWithPassword(username, passwordVar);
     }
 });
 

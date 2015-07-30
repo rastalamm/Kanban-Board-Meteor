@@ -19,10 +19,10 @@ Router.route('/profile',{
   template:'profile'
 });
 Router.route('/register',{
-  template:'register'
+  template:'welcomePage'
 });
 Router.route('/welcome',{
-  template: 'welcome'
+  template: 'welcomePage'
 });
 
 // Router.route('/',{
