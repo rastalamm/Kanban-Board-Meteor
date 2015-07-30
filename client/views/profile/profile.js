@@ -53,3 +53,13 @@ Template.profile.helpers({
   }
 });
 
+Template.profile.events({
+  'keypress .profile_input': function(evt,tmpl){
+    event.target.blur();
+    if (event.keyCode == 13) {
+//*********************working on this
+
+    }
+  }
+})
+
