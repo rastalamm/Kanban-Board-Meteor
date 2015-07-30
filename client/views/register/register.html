@@ -1,29 +1,43 @@
 <template name='welcomePage'>
 
-  <div class="registerLoginHouse">
-    <div class></div>
-     {{> register}}
-     {{> login}}
+  <div class="registerLoginHouse row">
+    <div class="welcome_heading small-12">
+      <h1>Welcome! Please register or Login below</h1>
+    </div>
+
+    <div class="row entry_portal_house">
+      <div class="register_house small-12 medium-6 columns">
+        {{> register}}
+
+      </div>
+      <div class="login_house small-12 medium-6 columns">
+        {{> login}}
+
+      </div>
+    </div>
+
+
+
   </div>
 </template>
 
 
 <template name="register">
     <form>
-        <input type="text" name="username" placeholder="Username">
-        <input type="email" name="registerEmail" placeholder="Email">
-        <input type="password" name="registerPassword" placeholder="Password">
-        <input type="text" name="firstName" placeholder="First Name">
-        <input type="text" name="lastName" placeholder="Last Name">
-        <input type="submit" value="Register">
+        <input class='entry_input' type="text" name="username" placeholder="Username">
+        <input class='entry_input' type="email" name="registerEmail" placeholder="Email">
+        <input class='entry_input' type="password" name="registerPassword" placeholder="Password">
+        <input class='entry_input' type="text" name="firstName" placeholder="First Name">
+        <input class='entry_input' type="text" name="lastName" placeholder="Last Name">
+        <input class='entry_input' type="submit" value="Register">
     </form>
 </template>
 
 
 <template name="login">
     <form>
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="loginPassword">
-        <input type="submit" value="Login">
+        <input class='entry_input' type="text" name="username" placeholder="Username">
+        <input class='entry_input' type="password" name="loginPassword">
+        <input class='entry_input' type="submit" value="Login">
     </form>
 </template>

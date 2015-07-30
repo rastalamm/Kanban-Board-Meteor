@@ -175,7 +175,28 @@ margin-top: 8px
 /*
 Welcome Page/Register / Login page
 */
+.welcome_heading{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.welcome_heading > h1{
+  text-align: center;
+  font-size: 2em;
+  color: #FFFFFF;
+}
 
-.registerLoginHouse{
+.entry_portal_house{
+  padding: 0 15%;
+}
 
+.register_house{
+  padding: 0 8%;
+}
+
+.login_house{
+  padding: 0 8%;
+}
+
+.entry_input{
+  border-radius: 15px !important;
 }
