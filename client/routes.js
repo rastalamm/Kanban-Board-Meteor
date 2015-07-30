@@ -1,12 +1,12 @@
 
-Router.onBeforeAction(function(pause) {
-    if (!Meteor.user()) {
-      console.log('srtainstrneitsrneio')
-        // pause();
-        Router.go('/welcome');
-    }
-    this.next();
-}, {except: ['/register']});
+// Router.onBeforeAction(function(pause) {
+//     if (!Meteor.user()) {
+//       console.log('srtainstrneitsrneio')
+//         // pause();
+//         Router.go('/welcome');
+//     }
+//     this.next();
+// }, {except: ['/register']});
 
 
 Router.configure({

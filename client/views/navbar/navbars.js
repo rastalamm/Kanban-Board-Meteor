@@ -1,17 +1,18 @@
 
-// Template.navbar.rendered = function(){
-//   console.log('rendered');
-// };
+Template.navbarLoggedIn.rendered = function(){
+  console.log('rendered');
+};
 
-// Template.navbar.created = function(){
-//   console.log('created');
+Template.navbarLoggedIn.created = function(){
+  console.log('created');
 
-// };
+};
 
-// Template.navbar.destroyed = function(){
-//   console.log('destroyed');
-// };
+Template.navbarLoggedIn.destroyed = function(){
+  console.log('destroyed');
+};
 
-// Template.navbar.helpers({
-// });
+Template.navbarLoggedIn.helpers({
+  username: function () {return Meteor.user().username}
+});
 
