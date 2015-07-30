@@ -54,6 +54,8 @@ margin-top: 8px
 .taskColHeader > h1 {
   font-size: 2em;
   color: #FFFFFF;
+  font-weight: 700;
+  letter-spacing: 5px;
 }
 
 .taskRow{
@@ -66,10 +68,9 @@ margin-top: 8px
 .taskHouse{
   width: 300px;
   height: 300px;
-  margin-bottom: 5%;
   margin: auto;
-  border: 1px solid black;
-  padding: 5% 8%;
+  margin-bottom: 5%;
+  padding: 2% 8%;
   background-image: url('../images/sticky_note.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -81,15 +82,17 @@ margin-top: 8px
   padding: 0 2%;
 }
 
-.taskTitle > h2{
+.taskTitle{
   font-size: 1.3em;
+  text-align: center;
+  padding-bottom: 2%;
+  border-bottom: 1px dashed black;
   overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .taskBody{
-  border: 1px solid black;
+
   height: 150px;
 
 
