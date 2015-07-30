@@ -141,3 +141,14 @@ margin-top: 8px
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+.deleteTask{
+  background-color: red;
+  float: right;
+
+}
+
+.deleteTask:hover{
+  background-color: DarkRed;
+
+}
