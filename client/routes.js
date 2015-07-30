@@ -26,15 +26,17 @@ Router.route('/welcome',{
   template: 'welcome'
 });
 
+// Router.route('/',{
+//   template: 'dashboard',
+//   onBeforeAction :  function(pause) {
+//       if (!Meteor.userId()) {
+//         this.render('welcome');
+//         pause();
+//       }
+//       this.next();
+//   }
+// })
 Router.route('/',{
-  template: 'dashboard',
-  onBeforeAction :  function(pause) {
-      if (!Meteor.userId()) {
-        this.render('welcome');
-        pause();
-      }
-      this.next();
-  }
+  template: 'dashboard'
 })
-
 

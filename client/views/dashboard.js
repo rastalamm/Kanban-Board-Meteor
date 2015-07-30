@@ -52,6 +52,7 @@ Template.editTaskTemplate.events({
 
     $('.editTaskTitle').val(this.title);
     $('.editTaskBody').val(tmpl.data.body);
+    $('.editStatus').val(tmpl.data.status);
 
     $('.deleteTask').click(deleteTask);
     $('.editTaskSubmit').click(editSubmit);
