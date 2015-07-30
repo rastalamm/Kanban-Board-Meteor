@@ -47,23 +47,25 @@ Template.profile.helpers({
 Template.profile.events({
   'keypress .profile_input': function(evt,tmpl){
     event.target.blur();
-
+    var newFirstName = $(event.target).parent().find('.firstName').text();
+    var newLastName = $(event.target).parent().find('.lastName').text();
 
     if (event.keyCode == 13) {
-      console.log(Meteor.users.find({_id:Meteor.userId()}).fetch()[0])
-      // console.log('ist there a user',UserCollection.find({id:Meteor.userId()}))
-      var newEntry = $(event.target).text();
       switch(evt.target.className){
         case 'firstName':
-          Meteor.users.update({_id:Meteor.userId()},{$set:{firstName:newEntry}})
+          Meteor.users.update({_id:Meteor.userId()},{$set:{'profile.firstName':newFirstName}})
           break;
         case 'lastName':
-          UserCollection.update({_id:Meteor.userId()},{$set:{lastName:newEntry}})
+          Meteor.users.update({_id:Meteor.userId()},{$set:{'profile.lastName':newLastName}})
           break;
-        case 'email':
-          UserCollection.update({_id:Meteor.userId()},{$set:{email:newEntry}})
-          break;
+        // case 'email':
+        //   var emailArray = Meteor.users.find({_id:Meteor.userId()}).fetch()[0].emails;
+        //   emailArray[0].address = newEntry;
+        //   console.log('emailArray',emailArray)
+        //   Meteor.users.update({_id:Meteor.userId()},{$set:{'emails':emailArray}})
+        //   break;
       }
+
       return false;
     }
   }
