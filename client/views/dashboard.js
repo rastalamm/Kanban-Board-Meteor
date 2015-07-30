@@ -13,9 +13,9 @@ Template.dashboard.destroyed = function(){
 };
 
 Template.dashboard.helpers({
-  toDoTasks: function(){ return TaskCollection.find({status: 'todo'}); },
-  inProgressTasks: function(){ return TaskCollection.find({status: 'inProgress'}); },
-  doneTasks: function(){ return TaskCollection.find({status: 'done'}); }
+  toDoTasks: function(){ return TaskCollection.find({userId: Meteor.userId(), status: 'todo'}); },
+  inProgressTasks: function(){ return TaskCollection.find({userId: Meteor.userId(), status: 'inProgress'}); },
+  doneTasks: function(){ return TaskCollection.find({userId: Meteor.userId(), status: 'done'}); }
 });
 
 Template.editTaskTemplate.helpers({

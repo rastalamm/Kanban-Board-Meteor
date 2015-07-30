@@ -13,4 +13,5 @@ Template.navbar.destroyed = function(){
 };
 
 Template.navbar.helpers({
+
 });

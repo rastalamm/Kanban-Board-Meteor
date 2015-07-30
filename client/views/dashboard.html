@@ -23,19 +23,28 @@
   </div>
   <div class="dashboardOfTasks">
 
-    <div class="taskRow" id="toDoCol">
+    <div class="taskRow" >
+      <div class="taskColHeader">
+        <h1>To Do</h1>
+      </div>
       {{#each toDoTasks}}
         {{> task}}
       {{/each}}
     </div>
 
     <div class="taskRow" id="inProgressCol">
+      <div class="taskColHeader">
+        <h1>In Progress</h1>
+      </div>
       {{#each inProgressTasks}}
         {{> task}}
       {{/each}}
     </div>
 
     <div class="taskRow" id="doneCol">
+      <div class="taskColHeader">
+        <h1>Done</h1>
+      </div>
       {{#each doneTasks}}
         {{> task}}
       {{/each}}
@@ -47,7 +56,7 @@
  <template name='task'>
   <div class=" taskHouse">
     <div class="taskTitle">
-      <h1>{{title}}</h1>
+      <h2>{{title}}</h2>
     </div>
 
     <div class="taskBody">
