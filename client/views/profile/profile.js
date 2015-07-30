@@ -13,6 +13,28 @@ Template.profile.destroyed = function(){
 };
 
 Template.profile.helpers({
+  todoCount : function (){
+    if(TaskCollection.find({userId: Meteor.userId(), status: 'todo'}).fetch().length > 0){
+      return TaskCollection.find({userId: Meteor.userId(), status: 'todo'}).fetch().length
+    }else {
+      return 0;
+    }
+  },
+
+  inProgressCount : function (){
+    if(TaskCollection.find({userId: Meteor.userId(), status: 'inProgress'}).fetch().length > 0){
+      return TaskCollection.find({userId: Meteor.userId(), status: 'inProgress'}).fetch().length
+    }else {
+      return 0;
+    }
+  },
+  doneCount : function (){
+    if(TaskCollection.find({userId: Meteor.userId(), status: 'done'}).fetch().length > 0){
+      return TaskCollection.find({userId: Meteor.userId(), status: 'done'}).fetch().length
+    }else {
+      return 0;
+    }
+  },
   username: function () {return Meteor.user().username},
   password: function () {return Meteor.user().username},
   name: function () {
