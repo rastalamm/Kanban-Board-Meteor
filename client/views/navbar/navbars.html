@@ -1,19 +1,28 @@
 <template name="navbarLoggedIn">
-  <div id="navUserName">
-    <a href="{{pathFor route='profile'}}">
-      <h1>{{username}}</h1>
-    </a>
-  </div>
-  <div id="logoutButton">
-     {{> loginButtons}}
+  <div class="row">
+    <div id="navUserName" class="small-12 medium-5 columns">
+      <a href="{{pathFor route='profile'}}">
+        <h1>{{username}}'s Kan Board</h1>
+      </a>
+    </div>
+    <div id="logoutButton" class="hide-for-small-only medium-7 columns">
+      <a href="#">
+        Logout
+      </a>
+       {{> loginButtons}}
+    </div>
+
   </div>
 </template>
 
 <template name="navbarLoggedOut">
-  <div id="navLogo">
-      <h1>Logo</h1>
-  </div>
-  <div id="loginButton">
-      {{> loginButtons}}
+  <div class="row">
+    <div id="navLogo" class="small-12 medium-5 columns">
+      <h1>Taskovic</h1>
+      <img src="../images/logo.png" alt="">
+    </div>
+    <div id="navText" class="hide-for-small-only medium-7 columns">
+      <h1>Get ready to organize {{> loginButtons}}</h1>
+    </div>
   </div>
 </template>

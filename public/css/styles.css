@@ -1,32 +1,41 @@
 body{
   background-image: url('../images/retina_wood.png');
   background-size: cover;
+  margin-top: 70px;
 }
 
 .navbar{
+  position: fixed;
+  top: 0;
   width: 100%;
-  padding: 0 10%;
+  /*padding: 0 10%;*/
+  /*padding-top: 25px;*/
   background-color: #FFFFFF;
+  height: 70px;
 }
 
 #navLogo{
-  display: inline-block;
-  margin-right: 25%;
+margin-top: 8px
 }
 
-#loginButton{
-  display: inline-block;
-  margin-left: 25%;
+#navLogo > h1{
+  display: none;
+}
+
+#navText > h1{
+  line-height: 70px;
+  font-size: 2em;
+  text-align: right;
+  margin-right: 10%;
 }
 
 #navUserName{
-  display: inline-block;
-  margin-right: 20%;
+
 }
 
 #logoutButton{
-  display: inline-block;
-  margin-left: 20%;
+  text-align: right;
+  line-height: 70px;
 }
 
 .mainBodyContent{
@@ -36,10 +45,10 @@ body{
 
 }
 
-#newTaskButton{
+/*#newTaskButton{
   position: absolute;
-  top: 0;
-}
+  top: 70;
+}*/
 
 .dashboardOfTasks{
   width: 100%;
