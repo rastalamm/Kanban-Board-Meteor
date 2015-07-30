@@ -1,18 +1,32 @@
-<template name='register'>
-  <div class="row">
-    <div class="small-12">
-      <h1>Welcome</h1>
-    </div>
+<template name='views'>
 
-    <div class="row">
-      <div class="small-12 medium-6 columns">
-        <h2>Register</h2>
-      </div>
-      <div class="small-12 medium-6 columns">
-        <h2>Login</h2>
-      </div>
-    </div>
+<div>
+   {{#if currentUser}}
+        <p>You're logged in.</p>
+        {{> dashboard}}
+    {{else}}
+        {{> register}}
+        {{> login}}
+    {{/if}}
+</div>
+</template>
 
-  </div>
-  {{> loginButtons}}
+
+<template name="register">
+    <form>
+        <input type="text" name="username" placeholder="Username">
+        <input type="email" name="registerEmail" placeholder="Email">
+        <input type="password" name="registerPassword" placeholder="Password">
+        <input type="text" name="firstName" placeholder="First Name">
+        <input type="text" name="lastName" placeholder="Last Name">
+        <input type="submit" value="Register">
+    </form>
+</template>
+
+<template name="login">
+    <form>
+        <input type="email" name="loginEmail">
+        <input type="password" name="loginPassword">
+        <input type="submit" value="Login">
+    </form>
 </template>
