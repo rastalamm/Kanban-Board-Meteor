@@ -107,19 +107,18 @@ Template.task.events({
     event.target.blur();
 
     if (event.keyCode == 13) {
-      var newTaskTitle = $(event.target).text();
+      var newEntry = $(event.target).text();
       console.log(newTaskTitle)
-      var newTaskBody = $(event.target).text();
       if(evt.target.className === 'taskTitle'){
-        if(newTaskTitle){
-          TaskCollection.update({_id:tmpl.data._id},{$set:{title:newTaskTitle}});
+        if(newEntry){
+          TaskCollection.update({_id:tmpl.data._id},{$set:{title:newEntry}});
         }else{
           var oldTaskTitle = TaskCollection.find({_id:tmpl.data._id}).fetch()[0].title;
           $(event.target).text(oldTaskTitle);
         }
       }else if(evt.target.className === 'taskBody'){
-        if(newTaskBody){
-          TaskCollection.update({_id:tmpl.data._id},{$set:{body:newTaskBody}});
+        if(newEntry){
+          TaskCollection.update({_id:tmpl.data._id},{$set:{body:newEntry}});
         }
       }
         // event.stopPropagation();

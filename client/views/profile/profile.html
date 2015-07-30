@@ -29,10 +29,11 @@
 
         <div class="profile_main_row row">
           <div class="profile_label small-6 columns">
-            <h2 contenteditable='true'>Username</h2>
+            <h2  >Username</h2>
+
           </div>
           <div class="profile_input small-6 columns">
-            <p contenteditable='true'>{{username}}</p>
+            <p contenteditable='true' class='userName'>{{username}}<a href="">edit username</a></p>
           </div>
         </div>
         <div class="profile_main_row row">
@@ -40,15 +41,24 @@
             <h2>Password</h2>
           </div>
           <div class="profile_input small-6 columns">
-            <p>{{password}}</p>
+            <a>change your password</a>
           </div>
         </div>
         <div class="profile_main_row row">
           <div class="profile_label small-6 columns">
-            <h2>Name</h2>
+            <h2>First Name</h2>
           </div>
           <div class="profile_input small-6 columns">
-            <p contenteditable='true'>{{name}}</p>
+            <p class='firstName' contenteditable='true'>{{firstName}}</p>
+          </div>
+        </div>
+
+        <div class="profile_main_row row">
+          <div class="profile_label small-6 columns">
+            <h2>Last Name</h2>
+          </div>
+          <div class="profile_input small-6 columns">
+            <p class='lastName' contenteditable='true'>{{lastName}}</p>
           </div>
         </div>
         <div class="profile_main_row row">
@@ -56,7 +66,7 @@
             <h2>Email</h2>
           </div>
           <div class="profile_input small-6 columns">
-            <p contenteditable='true'>{{email}}</p>
+            <p class='email' contenteditable='true'>{{email}}</p>
           </div>
         </div>
       </div>
