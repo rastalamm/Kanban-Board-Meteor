@@ -35,30 +35,33 @@ Template.profile.helpers({
       return 0;
     }
   },
-  username: function () {return Meteor.user().username},
-  password: function () {return Meteor.user().username},
-  name: function () {
-    if(Meteor.user().name){
-      return Meteor.user().name
-    }else{
-      return "Click me to edit!"
-    }
-  },
-  email : function () {
-    if(Meteor.user().email){
-      return Meteor.user().email
-    }else{
-      return "Click me to edit!"
-    }
-  }
+  username: function () {return Meteor.users.find({_id:Meteor.userId()}).fetch().username;},
+  password: function () {return Meteor.user().password},
+  name: function () { return Meteor.user().name},
+  email : function () { return Meteor.user().email }
+
 });
 
 Template.profile.events({
   'keypress .profile_input': function(evt,tmpl){
     event.target.blur();
-    if (event.keyCode == 13) {
-//*********************working on this
 
+
+    if (event.keyCode == 13) {
+      // console.log('ist there a user',UserCollection.find({id:Meteor.userId()}))
+      var newEntry = $(event.target).text();
+      // switch(evt.target.className){
+      //   case 'firstName':
+      //     UserCollection.update({_id:Meteor.userId()},{$set:{firstName:newEntry}})
+      //     break;
+      //   case 'lastName':
+      //     UserCollection.update({_id:Meteor.userId()},{$set:{lastName:newEntry}})
+      //     break;
+      //   case 'email':
+      //     UserCollection.update({_id:Meteor.userId()},{$set:{email:newEntry}})
+      //     break;
+      // }
+      return false;
     }
   }
 })
