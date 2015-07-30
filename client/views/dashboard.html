@@ -85,8 +85,8 @@
 
 
  <template name="newTaskTemplate">
-    <input type="text" placeholder='task title' name='title' id="newTaskTitle">
-    <input  required='true' type="text" placeholder='task description' name='body' id="newTaskBody">
+    <input type="text" placeholder='task title (up to 22 characters)' name='title' maxlength="22" id="newTaskTitle">
+    <input  type="text" placeholder='task description' maxlength="100" name='body' id="newTaskBody">
     <input type="submit" value='add' class="button" id='addTaskSubmit'>
  </template>
 
