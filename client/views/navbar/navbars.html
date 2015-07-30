@@ -6,9 +6,13 @@
       </a>
     </div>
     <div id="navButtonContainer" class="hide-for-small-only medium-7 columns">
+    {{#if notOnDashboard}}
       <a href="/dashboard">Dashboard</a>
+    {{/if}}
       <!-- <a href="/profile">Profile</a> -->
-       <a class="{{activeIfTemplateIs 'profile'}}" href="{{pathFor 'profile'}}">Profile</a>
+    {{#if notOnProfile}}
+       <a href="{{pathFor 'profile'}}">Profile</a>
+    {{/if}}
       <a href="/" class="logout">
         Logout
       </a>
