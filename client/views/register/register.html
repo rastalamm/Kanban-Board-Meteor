@@ -23,21 +23,23 @@
 
 
 <template name="register">
+    <h2>Register</h2>
     <form>
-        <input class='entry_input' type="text" name="username" placeholder="Username">
         <input class='entry_input' type="email" name="registerEmail" placeholder="Email">
+        <input class='entry_input' type="text" name="username" placeholder="Username">
         <input class='entry_input' type="password" name="registerPassword" placeholder="Password">
-        <input class='entry_input' type="text" name="firstName" placeholder="First Name">
-        <input class='entry_input' type="text" name="lastName" placeholder="Last Name">
-        <input class='entry_input' type="submit" value="Register">
+        <input class='entry_input' type="hidden" name="firstName" placeholder="First Name">
+        <input class='entry_input' type="hidden" name="lastName" placeholder="Last Name">
+        <input class='entry_submit' type="submit" value="Register">
     </form>
 </template>
 
 
 <template name="login">
+    <h2>Login</h2>
     <form>
         <input class='entry_input' type="text" name="username" placeholder="Username">
-        <input class='entry_input' type="password" name="loginPassword">
-        <input class='entry_input' type="submit" value="Login">
+        <input class='entry_input' type="password" name="loginPassword" placeholder="Password">
+        <input class='entry_submit' type="submit" value="Login">
     </form>
 </template>

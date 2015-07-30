@@ -42,7 +42,6 @@ margin-top: 8px
 
 .mainBodyContent{
   width: 100%;
-  border: 1px solid blue;
   text-align: center;
 }
 
@@ -193,10 +192,38 @@ Welcome Page/Register / Login page
   padding: 0 8%;
 }
 
+.register_house > h2{
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+}
+
 .login_house{
   padding: 0 8%;
 }
 
+.login_house > h2{
+  font-size: 1.5em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+}
+
 .entry_input{
   border-radius: 15px !important;
+}
+
+.entry_submit{
+  border-radius: 15px !important;
+  border: none;
+  width: 100px;
+  height: 35px;
+ background-color: black;
+ color: #FFFFFF;
+}
+
+.entry_submit:hover{
+  background-color: white;
+  color: #000000;
 }
