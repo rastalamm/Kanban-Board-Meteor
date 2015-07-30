@@ -1,3 +1,14 @@
+
+Router.onBeforeAction(function(pause) {
+    if (!Meteor.user()) {
+      console.log('srtainstrneitsrneio')
+        // pause();
+        Router.go('/welcome');
+    }
+    this.next();
+}, {except: ['/register']});
+
+
 Router.configure({
   layoutTemplate: 'layout'
 })
@@ -11,7 +22,19 @@ Router.route('/profile',{
 Router.route('/register',{
   template:'register'
 });
+Router.route('/welcome',{
+  template: 'welcome'
+});
 
 Router.route('/',{
-  template: 'welcome'
+  template: 'dashboard',
+  onBeforeAction :  function(pause) {
+      if (!Meteor.userId()) {
+        this.render('welcome');
+        pause();
+      }
+      this.next();
+  }
 })
+
+
