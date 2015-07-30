@@ -102,6 +102,7 @@ Template.task.events({
     };
   },
   'keypress .taskHouse': function(evt, tmpl) {
+    event.target.blur();
     if (event.keyCode == 13) {
       var newTaskTitle = $(event.target).find('.taskTitle').text();
       var newTaskBody = $(event.target).find('.taskBody').text();
@@ -110,6 +111,7 @@ Template.task.events({
       }else if(newTaskBody){
         TaskCollection.update({_id:tmpl.data._id},{$set:{body:newTaskBody}});
       }
+        // event.blur();
         event.stopPropagation();
         return false;
     }
