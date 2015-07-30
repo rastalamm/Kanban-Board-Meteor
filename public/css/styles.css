@@ -45,13 +45,34 @@ margin-top: 8px
   text-align: center;
 }
 
-/*#newTaskButton{
-  position: absolute;
-  top: 70;
-}*/
+#newTaskButton{
+    position: fixed;
+    bottom: -10px;
+    right: -13px;
+    width: 75px;
+    height: 75px;
+    background-color: red;
+    font-size: 4em;
+    line-height: 63px;
+    border-radius: 58%;
+    color: #FFFFFF;
+}
+
+#newTaskButton:hover{
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  width: 125px;
+  height: 125px;
+  line-height: 109px;
+  font-size: 6em;
+  color: #FFFFFF;
+}
 
 .dashboardOfTasks{
   width: 100%;
+  border: 1px solid;
+  margin-top: 1%;
 }
 
 .taskColHeader > h1 {
@@ -65,7 +86,7 @@ margin-top: 8px
   width: 33%;
   display: inline-block;
   vertical-align: top;
-  padding: 2% 2%;
+  padding: 0 2%;
 }
 
 .taskHouse{
