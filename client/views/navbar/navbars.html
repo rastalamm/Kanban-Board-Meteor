@@ -5,9 +5,10 @@
         <h1 id='navUserName'>{{username}}'s Kan Board</h1>
       </a>
     </div>
-    <div id="logoutButton" class="hide-for-small-only medium-7 columns">
+    <div id="navButtonContainer" class="hide-for-small-only medium-7 columns">
       <a href="/dashboard">Dashboard</a>
-      <a href="/profile">Profile</a>
+      <!-- <a href="/profile">Profile</a> -->
+       <a class="{{activeIfTemplateIs 'profile'}}" href="{{pathFor 'profile'}}">Profile</a>
       <a href="/" class="logout">
         Logout
       </a>

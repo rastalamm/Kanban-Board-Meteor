@@ -13,7 +13,20 @@ Template.navbarLoggedIn.destroyed = function(){
 };
 
 Template.navbarLoggedIn.helpers({
-  username: function () {return Meteor.user().username}
+  username: function () {return Meteor.user().username},
+  notOnDashboard: function(){
+    if (Router.current().route.getName()==='dashboard'){
+      return false;
+    }
+    return true;
+  },
+  notOnProfile: function(){
+    if (Router.current().route.getName()==='profile'){
+      return false;
+    }
+    return true;
+  }
+
 });
 
 Template.navbarLoggedIn.events({
