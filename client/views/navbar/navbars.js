@@ -16,3 +16,9 @@ Template.navbarLoggedIn.helpers({
   username: function () {return Meteor.user().username}
 });
 
+Template.navbarLoggedIn.events({
+    'click .logout': function(event){
+        event.preventDefault();
+        Meteor.logout();
+    }
+});

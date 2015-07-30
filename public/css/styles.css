@@ -110,6 +110,18 @@ margin-top: 8px
   width: 40%;
 }
 
+.deleteTask{
+  background-color: red;
+  float: right;
+
+}
+
+.deleteTask:hover{
+  background-color: DarkRed;
+
+}
+
+
 /*Profile Section*/
 .profile_top_row{
   margin-top: 3%;
@@ -155,13 +167,3 @@ margin-top: 8px
   background-repeat: no-repeat;
 }
 
-.deleteTask{
-  background-color: red;
-  float: right;
-
-}
-
-.deleteTask:hover{
-  background-color: DarkRed;
-
-}

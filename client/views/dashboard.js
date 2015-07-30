@@ -19,7 +19,6 @@ Template.dashboard.helpers({
 });
 
 
-
 Template.newTaskTemplate.events({
   'click #addTaskSubmit' : function(evt, tmpl){
     var taskTitle = tmpl.find('#newTaskTitle').value;
