@@ -8,7 +8,7 @@ meteor-platform
 insecure
 iron:router
 accounts-ui
-nsmeta:zurb-foundation
-ewall:foundation
 accounts-password
 benjaminrh:event-hooks
+nsmeta:zurb-foundation
+ewall:foundation
