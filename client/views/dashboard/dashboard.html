@@ -93,18 +93,26 @@
  <template name="newTaskTemplate">
   <form>
     <input type="text" placeholder='task title (up to 22 characters)' name='title' maxlength="22" id="newTaskTitle">
-    <input  type="text" placeholder='task description' maxlength="200" name='body' id="newTaskBody">
-    <select name='color' class="colorSelect">
-      <option value="yellow">yellow</option>
-      <option value="pink">pink</option>
-      <option value="green">green</option>
-      <option value="orange">orange</option>
-      <option value="blue">blue</option>
-    </select>
-    <select name='privacy' class="privacySelect">
-      <option value="public">public</option>
-      <option value="private">private</option>
-    </select>
+    <textarea rows="5" type="text" placeholder='task description' maxlength="200" name='body' id="newTaskBody"></textarea>
+    <div class="row">
+      <div class="small-6 columns">
+        <select name='color' class="colorSelect">
+          <option value="yellow">yellow</option>
+          <option value="pink">pink</option>
+          <option value="green">green</option>
+          <option value="orange">orange</option>
+          <option value="blue">blue</option>
+        </select>
+
+      </div>
+      <div class="small-6 columns">
+        <select name='privacy' class="privacySelect">
+          <option value="public">public</option>
+          <option value="private">private</option>
+        </select>
+      </div>
+    </div>
+
     <input type="submit" value='add' class="button" id='addTaskSubmit'>
   </form>
  </template>
@@ -117,23 +125,31 @@
         <h2 id="modalTitle">Edit your task!</h2>
     <form>
         <input type="text"  name='title' class="editTaskTitle">
-        <input  type="text"  name='body' class="editTaskBody" >
-        <select class="editStatus">
-          <option value="todo">to do</option>
-          <option value="inProgress">in progress</option>
-          <option value="done">done</option>
-        </select>
-        <select class="colorSelect">
-           <option value="yellow">yellow</option>
-          <option value="pink">pink</option>
-          <option value="green">green</option>
-          <option value="orange">orange</option>
-          <option value="blue">blue</option>
-        </select>
-        <select name='privacy' class="privacySelect">
-          <option value="public">public</option>
-          <option value="private">private</option>
-        </select>
+        <textarea rows="5" type="text"  name='body' maxlength="200" class="editTaskBody" ></textarea>
+        <div class="row">
+          <div class="small-4 columns">
+            <select class="editStatus">
+              <option value="todo">to do</option>
+              <option value="inProgress">in progress</option>
+              <option value="done">done</option>
+            </select>
+          </div>
+          <div class="small-4 columns">
+            <select class="colorSelect">
+              <option value="yellow">yellow</option>
+              <option value="pink">pink</option>
+              <option value="green">green</option>
+              <option value="orange">orange</option>
+              <option value="blue">blue</option>
+            </select>
+          </div>
+          <div class="small-4 columns">
+            <select name='privacy' class="privacySelect">
+              <option value="public">public</option>
+              <option value="private">private</option>
+            </select>
+          </div>
+        </div>
         <input type="submit" value='Save Changes' class="button editTaskSubmit">
         <button class='archiveTask'>Archive</button>
     </form>

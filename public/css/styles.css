@@ -214,6 +214,10 @@ body{
   background-color: DarkRed;
 }
 
+#newTaskModal, #editTaskModal{
+  width: 30%;
+}
+
 /*
 Profile Section
 */
