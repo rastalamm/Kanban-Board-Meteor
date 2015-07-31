@@ -15,7 +15,7 @@ Template.navbarLoggedIn.destroyed = function(){
 Template.navbarLoggedIn.helpers({
   username: function () {return Meteor.user().username},
   notOnDashboard: function(){
-    if (Router.current().route.getName()==='dashboard'){
+    if (Router.current().route.getName()==='dashboard' || Router.current().route.getName()===undefined){
       return false;
     }
     return true;

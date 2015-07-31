@@ -49,6 +49,7 @@ Template.newTaskTemplate.events({
         status: 'todo',
         complete: false,
         privacy: 'public',
+        comments: [],
         added: Date.now(),
         userId: Meteor.userId(),
         username: Meteor.user().username
