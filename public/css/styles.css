@@ -11,7 +11,7 @@ body{
 }
 
 #navLogo{
-margin-top: 8px
+  margin-top: 8px
 }
 
 #navLogo > h1{
@@ -39,10 +39,6 @@ margin-top: 8px
   text-align: right;
   line-height: 70px;
   font-size: 1.2em;
-}
-
-#navDashboardLink{
-
 }
 
 #navGlobalDashboardLink{
@@ -102,8 +98,6 @@ margin-top: 8px
   text-shadow: 0px 2px 2px black;
   color: #FFFFFF;
   margin-bottom: 5%;
-  /*color: #222;*/
-
 }
 
 .taskRow{
@@ -183,16 +177,16 @@ margin-top: 8px
 .deleteTask{
   background-color: red;
   float: right;
-
 }
 
 .deleteTask:hover{
   background-color: DarkRed;
-
 }
 
+/*
+Profile Section
+*/
 
-/*Profile Section*/
 .profile_top_row{
   margin-top: 3%;
   margin-bottom: 3%;
@@ -203,8 +197,6 @@ margin-top: 8px
   letter-spacing: 1px;
   color: #FFFFFF;
 }
-
-
 
 .profile_main{
   background-color: rgba(255, 255, 255, 0.5);
@@ -294,7 +286,7 @@ Welcome Page/Register / Login page
 }
 
 input.error{
-    background-color:rgb(255, 231, 231);
+  background-color:rgb(255, 231, 231);
 }
 
 .error{
