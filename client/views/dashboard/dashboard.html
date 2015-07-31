@@ -41,6 +41,7 @@
   </div>
  </template>
 
+
  <template name='task'>
   <div class={{currentColor}}>
     <div class="taskTitleContainer">
@@ -81,6 +82,18 @@
         </span>
       </div>
     {{/if}}
+    </div>
+    <div class="row comments_section">
+      <div class="small-12">
+        <ul class="accordion" data-accordion role="tablist">
+          <li class="accordion-navigation">
+            <a href="#panel1d" role="tab" id="panel1d-heading" aria-controls="panel1d">Accordion 1</a>
+            <div id="panel1d" class="content active" role="tabpanel" aria-labelledby="panel1d-heading">
+              Panel 1. Lorem ipsum dolor
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 
