@@ -25,9 +25,9 @@
 <template name="register">
     <h2>Register</h2>
     <form class='register'>
-        <input class='entry_input' type="email" name="registerEmail" placeholder="Email" required>
-        <input class='entry_input' type="text" name="username" placeholder="Username" required>
-        <input class='entry_input' type="password" name="registerPassword" placeholder="Password" required>
+        <input class='entry_input' type="email" id="registerEmail" name="registerEmail" placeholder="Email" required>
+        <input class='entry_input' type="text" id="registerUsername" name="username" placeholder="Username" required>
+        <input class='entry_input' type="password" id="registerPassword" name="registerPassword" placeholder="Password" required>
         <input class='entry_input' type="hidden" name="firstName" placeholder="First Name" required>
         <input class='entry_input' type="hidden" name="lastName" placeholder="Last Name" required>
         <input class='entry_submit' type="submit" value="Register">
@@ -38,8 +38,8 @@
 <template name="login">
     <h2>Login</h2>
     <form class="login">
-        <input class='entry_input' type="text" name="username" placeholder="Username" required>
-        <input class='entry_input' type="password" name="loginPassword" placeholder="Password" required>
+        <input class='entry_input' type="text" id="loginUsername" name="username" placeholder="Username" required>
+        <input class='entry_input' type="password" id="loginPassword" name="loginPassword" placeholder="Password" required>
         <input class='entry_submit' type="submit" value="Login">
     </form>
 </template>
