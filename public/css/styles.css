@@ -46,11 +46,15 @@ margin-top: 8px
 }
 
 #navGlobalDashboardLink{
-
+  margin-left: 10%;
 }
 
 #navProfileLink{
-  margin: 0 15%;
+  margin-left: 10%;
+}
+
+#navLogOutLink{
+  margin-left: 10%;
 }
 
 .mainBodyContent{
@@ -66,7 +70,7 @@ margin-top: 8px
     height: 75px;
     background-color: #2db34a;
     font-size: 4em;
-    line-height: 63px;
+    line-height: 60px;
     border-radius: 58%;
     color: #FFFFFF;
     border: 3px solid #FFFFFF;
