@@ -13,7 +13,7 @@ Template.welcomePage.onDestroyed(function(){
 });
 
 Template.register.onRendered(function(){
-  $('.register').validate({
+  var validator = $('.register').validate({
     rules: {
       registerEmail : {
         required: true,
@@ -39,6 +39,43 @@ Template.register.onRendered(function(){
       registerPassword : {
         minlength : "Minimum password length is 6 characters"
       }
+    },
+    submitHandler: function(){
+      var username = $(event.target).find('#registerUsername').val();
+      var emailVar = $(event.target).find('#registerEmail').val();
+      var passwordVar = $(event.target).find('#registerPassword').val();
+      var firstName = 'Click Me to Edit!';
+      var lastName = 'Click Me to Edit!';
+
+      Accounts.createUser({
+          username: username,
+          email: emailVar,
+          password: passwordVar,
+          profile : {
+            firstName : firstName,
+            lastName : lastName
+          }
+      }, function(error){
+
+        if(error){
+          if(error.reason == "Email already exists."){
+            validator.showErrors({
+                registerEmail: "email already in the systesm"
+            });
+          }
+          if(error.reason == "Username already exists."){
+          console.log('error', error.reason);
+            validator.showErrors({
+                username: "That user already exitst"
+            });
+          }
+        } else {
+          var currentRoute = Router.current().route.getName();
+          if(currentRoute == "login"){
+              Router.go("/dashboard");
+          }
+        }
+      });
     }
   });
 });
@@ -76,31 +113,31 @@ Template.login.onRendered(function(){
 
 
 if (Meteor.isClient) {
-Template.register.events({
-    'submit form': function(event) {
-        event.preventDefault();
-        var username = event.target.username.value;
-        var emailVar = event.target.registerEmail.value;
-        var passwordVar = event.target.registerPassword.value;
-        var firstName = 'Click Me to Edit!';
-        var lastName = 'Click Me to Edit!';
-        Accounts.createUser({
-            username: username,
-            email: emailVar,
-            password: passwordVar,
-            profile : {
-              firstName : firstName,
-              lastName : lastName
-            }
-        }, function (error){
-          if(error){
-            alert('there was an error with the register');
-          }else{
-            Router.go('/dashboard');
-          }
-        });
-    }
-});
+// Template.register.events({
+//     'submit form': function(event) {
+//         event.preventDefault();
+//         var username = event.target.username.value;
+//         var emailVar = event.target.registerEmail.value;
+//         var passwordVar = event.target.registerPassword.value;
+//         var firstName = 'Click Me to Edit!';
+//         var lastName = 'Click Me to Edit!';
+//         Accounts.createUser({
+//             username: username,
+//             email: emailVar,
+//             password: passwordVar,
+//             profile : {
+//               firstName : firstName,
+//               lastName : lastName
+//             }
+//         }, function (error){
+//           if(error){
+//             alert('there was an error with the register');
+//           }else{
+//             Router.go('/dashboard');
+//           }
+//         });
+//     }
+// });
 
 // Template.login.events({
 //     'submit form': function(event){
