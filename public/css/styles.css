@@ -63,17 +63,18 @@ margin-top: 8px
 }
 
 #newTaskButton{
-    position: fixed;
-    bottom: -10px;
-    right: -13px;
-    width: 75px;
-    height: 75px;
-    background-color: #2db34a;
-    font-size: 4em;
-    line-height: 60px;
-    border-radius: 58%;
-    color: #FFFFFF;
-    border: 3px solid #FFFFFF;
+  position: fixed;
+  bottom: -10px;
+  right: -13px;
+  width: 75px;
+  height: 75px;
+  background-color: #2db34a;
+  font-size: 4em;
+  line-height: 60px;
+  border-radius: 58%;
+  color: #FFFFFF;
+  border: 3px solid #FFFFFF;
+  box-shadow: -5px -5px 20px #000000;
 }
 
 #newTaskButton:hover{

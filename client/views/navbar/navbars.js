@@ -36,8 +36,7 @@ Template.navbarLoggedIn.helpers({
 });
 
 Template.navbarLoggedIn.events({
-    'click .logout': function(event){
-        // event.preventDefault();
-        Meteor.logout();
-    }
+  'click .logout': function(event){
+    Meteor.logout();
+  }
 });
