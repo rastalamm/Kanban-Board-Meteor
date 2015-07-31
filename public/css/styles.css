@@ -70,7 +70,7 @@ body{
   border-radius: 58%;
   color: #FFFFFF;
   border: 3px solid #FFFFFF;
-  box-shadow: 5px 5px 20px #000000;
+  box-shadow: 5px -5px 20px #000000;
 }
 
 #newTaskButton:hover{
@@ -82,7 +82,7 @@ body{
   line-height: 100px;
   font-size: 6em;
   color: #FFFFFF;
-  box-shadow: 10px 10px 30px #000000;
+  box-shadow: 10px -10px 30px #000000;
 }
 
 #archiveTaskButton{
@@ -144,14 +144,14 @@ body{
   margin: auto;
   margin-bottom: 5%;
   padding: 2% 8%;
-  background-image: url('../images/sticky-note-yellow.png');
+  background-image: url('../images/sticky-note-yellow-copy.png');
   background-size: cover;
   background-repeat: no-repeat;
-  box-shadow: -5px -5px 10px #000000;
+  box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .taskHouse.yellow{
-  background-image: url('../images/sticky-note-yellow.png');
+  background-image: url('../images/sticky-note-yellow-copy.png');
 }
 
 .taskHouse.blue{
@@ -215,7 +215,19 @@ body{
 }
 
 #newTaskModal, #editTaskModal{
-  width: 30%;
+  width: 450px;
+}
+
+.taskEdit{
+  background-image: url('../images/pencil.svg');
+  background-size: cover;
+  width: 25px;
+  height: 25px;
+}
+
+.taskEdit:hover{
+  width: 30px;
+  height: 30px;
 }
 
 /*
@@ -254,7 +266,7 @@ Profile Section
   line-height: 65px;
   font-size: 1.5em;
   margin: auto;
-  background-image: url('../images/sticky-note-yellow.png');
+  background-image: url('../images/sticky-note-yellow-copy.png');
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: -2px -2px 10px #000000;
