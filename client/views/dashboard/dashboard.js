@@ -66,9 +66,10 @@ Template.newTaskTemplate.events({
     tmpl.find('#newTaskBody').value = '';
 
     } else{
-      return;
+      return false;
     }
     $('.close-reveal-modal').click();
+    return false;
   }
 
 });
@@ -93,7 +94,7 @@ Template.editTaskTemplate.events({
     function archiveTask(){
       TaskCollection.update({_id:taskId},{$set:{status:'archived'}})
       $('.close-reveal-modal').click();
-      return;
+      return false;
 
     }
 
