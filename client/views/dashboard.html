@@ -1,0 +1,110 @@
+<template name="dashboard">
+  <a href="#" data-reveal-id="newTaskModal">
+    <div id="newTaskButton">+</div>
+  </a>
+  <div id="newTaskModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <h2 id="modalTitle">Add a task!</h2>
+      {{> newTaskTemplate}}
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+  </div>
+
+  <div class="dashboardOfTasks">
+    <div class="taskRow" >
+      <div class="taskColHeader">
+        <h1>To Do</h1>
+      </div>
+      {{#each toDoTasks}}
+        {{> task}}
+      {{/each}}
+    </div>
+
+    <div class="taskRow" id="inProgressCol">
+      <div class="taskColHeader">
+        <h1>In Progress</h1>
+      </div>
+      {{#each inProgressTasks}}
+        {{> task}}
+      {{/each}}
+    </div>
+
+    <div class="taskRow" id="doneCol">
+      <div class="taskColHeader">
+        <h1>Done</h1>
+      </div>
+      {{#each doneTasks}}
+        {{> task}}
+      {{/each}}
+    </div>
+
+  </div>
+ </template>
+
+ <template name='task'>
+  <div class={{currentColor}}>
+    <div class="taskTitleContainer">
+      <h2 class="taskTitle" contenteditable='true'>{{title}}</h2>
+    </div>
+
+    <div class="taskBodyContainer">
+      <p class='taskBody' contenteditable='true'>{{body}}</p>
+    </div>
+    <div class='taskButtonRow'>
+      <div class='taskEditButton'>
+        {{> editTaskTemplate}}
+      </div>
+      <div class="taskArrow">
+        <a href="" class="moveTaskAlong">
+        {{#if complete}}
+          <img id="statusImage" src="./images/tick.svg">
+        {{else}}
+          <img id="statusImage" src="./images/rightarrow.svg">
+        {{/if}}
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+ </template>
+
+
+ <template name="newTaskTemplate">
+    <input type="text" placeholder='task title (up to 22 characters)' name='title' maxlength="22" id="newTaskTitle">
+    <input  type="text" placeholder='task description' maxlength="200" name='body' id="newTaskBody">
+    <select class="colorSelect">
+      <option value="yellow">yellow</option>
+      <option value="pink">pink</option>
+      <option value="green">green</option>
+      <option value="orange">orange</option>
+      <option value="blue">blue</option>
+      </select>
+    <input type="submit" value='add' class="button" id='addTaskSubmit'>
+ </template>
+
+  <template name="editTaskTemplate">
+    <a href='#' data-reveal-id="editTaskModal" class='editLink'>
+      <div class="taskEdit">Edit</div>
+    </a>
+    <div id="editTaskModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+      <h2 id="modalTitle">Edit your task!</h2>
+      <input type="text"  name='title' class="editTaskTitle">
+      <input  type="text"  name='body' class="editTaskBody" >
+      <select class="editStatus">
+        <option value="todo">to do</option>
+        <option value="inProgress">in progress</option>
+        <option value="done">done</option>
+      </select>
+      <select class="colorSelect">
+         <option value="yellow">yellow</option>
+        <option value="pink">pink</option>
+        <option value="green">green</option>
+        <option value="orange">orange</option>
+        <option value="blue">blue</option>
+      </select>
+      <input type="submit" value='Save Changes' class="button editTaskSubmit">
+      <button class='deleteTask'>Delete</button>
+      <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+  </div>
+ </template>

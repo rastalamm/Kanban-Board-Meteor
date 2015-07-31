@@ -1,6 +1,6 @@
 <template name="navbarLoggedIn">
-  <div class="row">
-    <div id="navUserNameBox" class="small-12 medium-5 columns">
+
+    <div id="navUserNameBox" class="small-12 medium-4 columns">
     {{#if notOnGlobalDashboard}}
       <a href="{{pathFor route='profile'}}">
         <h1 id='navUserName'>{{username}}'s Kan Board</h1>
@@ -9,7 +9,7 @@
       <h1 id='navUserName'>Community Kan Board</h1>
     {{/if}}
     </div>
-    <div id="navButtonContainer" class="hide-for-small-only medium-7 columns">
+    <div id="navButtonContainer" class="small-12 medium-4 columns">
     {{#if notOnDashboard}}
       <a href="/dashboard">Dashboard</a>
     {{/if}}
@@ -23,19 +23,14 @@
       <a href="/" class="logout">
         Logout
       </a>
-    </div>
+
 
   </div>
 </template>
 
 <template name="navbarLoggedOut">
-  <div class="row">
-    <div id="navLogo" class="small-12 medium-5 columns">
-      <h1>Taskovic</h1>
-      <img src="../images/logo.png" alt="">
-    </div>
-    <div id="navText" class="hide-for-small-only medium-7 columns">
-      <h1>Get ready to organize</h1>
-    </div>
+
+  <div id="navText" class="hide-for-small-only medium-8 columns">
+    <h1>Get ready to organize</h1>
   </div>
 </template>

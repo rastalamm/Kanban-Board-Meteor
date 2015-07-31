@@ -5,8 +5,7 @@ body{
 
 .navbar{
   width: 100%;
-  /*padding: 0 10%;*/
-  /*padding-top: 25px;*/
+  border-bottom: 5px solid;
   background-color: #FFFFFF;
   height: 70px;
 }
@@ -180,13 +179,6 @@ margin-top: 8px
   margin-bottom: 3%;
 }
 
-/*#profile_image{
-  background-image: url('https://images.duckduckgo.com/iu/?u=http%3A%2F%2F4.bp.blogspot.com%2F_yn2EXgEvGbw%2FS4SztlovbqI%2FAAAAAAAAAt8%2F9W5yAf6NdEw%2Fs400%2Fcurly-mustache.jpg&f=1');
-  background-size: cover;
-  width: 100px;
-  height: 100px;
-}*/
-
 .task_count_box > h3{
   color: #FFFFFF;
 }
@@ -230,6 +222,7 @@ Welcome Page/Register / Login page
 .welcome_heading > h1{
   text-align: center;
   font-size: 2em;
+  text-shadow: 0px 2px 2px black;
   color: #FFFFFF;
 }
 
@@ -245,6 +238,7 @@ Welcome Page/Register / Login page
   font-size: 1.5em;
   font-weight: 700;
   letter-spacing: 1px;
+  text-shadow: 0px 2px 2px black;
   color: #FFFFFF;
 }
 
@@ -256,6 +250,7 @@ Welcome Page/Register / Login page
   font-size: 1.5em;
   font-weight: 700;
   letter-spacing: 1px;
+  text-shadow: 0px 2px 2px black;
   color: #FFFFFF;
 }
 
@@ -268,8 +263,8 @@ Welcome Page/Register / Login page
   border: none;
   width: 100px;
   height: 35px;
- background-color: black;
- color: #FFFFFF;
+  background-color: black;
+  color: #FFFFFF;
 }
 
 .entry_submit:hover{
@@ -283,4 +278,5 @@ input.error{
 
 .error{
   background-color: #FFFFFF;
+  border-radius: 15px;
 }
