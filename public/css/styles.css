@@ -255,3 +255,11 @@ Welcome Page/Register / Login page
   background-color: white;
   color: #000000;
 }
+
+input.error{
+    background-color:rgb(255, 231, 231);
+}
+
+.error{
+  background-color: #FFFFFF;
+}
