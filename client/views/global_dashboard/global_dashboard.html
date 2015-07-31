@@ -1,0 +1,44 @@
+<template name="globalDashboard">
+  <a href="#" data-reveal-id="newTaskModal">
+    <div id="newTaskButton">+</div>
+  </a>
+  <div id="newTaskModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <h2 id="modalTitle">Add a task!</h2>
+      {{> newTaskTemplate}}
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+  </div>
+
+  <div class="dashboardOfTasks">
+    <div class="taskRow" >
+      <div class="taskColHeader">
+        <h1>To Do</h1>
+      </div>
+      {{#each toDoTasks}}
+        {{> task}}
+      {{/each}}
+    </div>
+
+    <div class="taskRow" id="inProgressCol">
+      <div class="taskColHeader">
+        <h1>In Progress</h1>
+      </div>
+      {{#each inProgressTasks}}
+        {{> task}}
+      {{/each}}
+    </div>
+
+    <div class="taskRow" id="doneCol">
+      <div class="taskColHeader">
+        <h1>Done</h1>
+      </div>
+      {{#each doneTasks}}
+        {{> task}}
+      {{/each}}
+    </div>
+
+  </div>
+ </template>
+
+
+
+
