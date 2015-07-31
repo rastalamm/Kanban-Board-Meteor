@@ -9,6 +9,9 @@
     {{#if notOnDashboard}}
       <a href="/dashboard">Dashboard</a>
     {{/if}}
+    {{#if notOnGlobalDashboard}}
+      <a href="/globaldashboard">Global</a>
+    {{/if}}
       <!-- <a href="/profile">Profile</a> -->
     {{#if notOnProfile}}
        <a href="{{pathFor 'profile'}}">Profile</a>

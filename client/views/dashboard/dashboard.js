@@ -36,6 +36,7 @@ Template.newTaskTemplate.events({
         color: taskColor,
         status: 'todo',
         complete: false,
+        privacy: 'public',
         added: Date.now(),
         userId: Meteor.userId(),
         username: Meteor.user().username
@@ -62,6 +63,7 @@ Template.editTaskTemplate.events({
     $('.editTaskBody').val(tmpl.data.body);
     $('.editStatus').val(tmpl.data.status);
     $('.colorSelect').val(tmpl.data.color);
+    $('.privacySelect').val(tmpl.data.privacy);
 
     $('.deleteTask').click(deleteTask);
     $('.editTaskSubmit').click(editSubmit);
@@ -80,6 +82,7 @@ Template.editTaskTemplate.events({
       var newTaskBody = $(event.target).parent().find('.editTaskBody').val();
       var newStatus = $(event.target).parent().find('.editStatus').val();
       var newColor = $(event.target).parent().find('.colorSelect').val();
+      var newPrivacy = $(event.target).parent().find('.privacySelect').val();
 
       TaskCollection.update({
               _id: taskId
@@ -88,7 +91,8 @@ Template.editTaskTemplate.events({
                 title:newTaskTitle,
                 body: newTaskBody,
                 status: newStatus,
-                color: newColor
+                color: newColor,
+                privacy: newPrivacy
             }});
       if(newStatus === 'complete'){
         TaskCollection.update({_id:taskId},{$set:{complete:true}});

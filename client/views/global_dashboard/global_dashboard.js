@@ -13,9 +13,9 @@ Template.globalDashboard.destroyed = function(){
 };
 
 Template.globalDashboard.helpers({
-  toDoTasks: function(){ return TaskCollection.find({status: 'todo'}); },
-  inProgressTasks: function(){ return TaskCollection.find({status: 'inProgress'}); },
-  doneTasks: function(){ return TaskCollection.find({status: 'done'}); }
+  toDoTasks: function(){ return TaskCollection.find({status: 'todo' , privacy: 'public'}); },
+  inProgressTasks: function(){ return TaskCollection.find({status: 'inProgress', privacy: 'public'}); },
+  doneTasks: function(){ return TaskCollection.find({status: 'done', privacy: 'public'}); }
 });
 
 // Template.task.helpers({

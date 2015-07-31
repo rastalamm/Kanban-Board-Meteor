@@ -25,6 +25,12 @@ Template.navbarLoggedIn.helpers({
       return false;
     }
     return true;
+  },
+  notOnGlobalDashboard: function(){
+    if (Router.current().route.getName()==='globaldashboard'){
+      return false;
+    }
+    return true;
   }
 
 });
