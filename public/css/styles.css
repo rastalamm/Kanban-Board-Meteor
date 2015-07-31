@@ -51,11 +51,12 @@ margin-top: 8px
     right: -13px;
     width: 75px;
     height: 75px;
-    background-color: firebrick;
+    background-color: #2db34a;
     font-size: 4em;
     line-height: 63px;
     border-radius: 58%;
     color: #FFFFFF;
+    border: 3px solid #FFFFFF;
 }
 
 #newTaskButton:hover{
@@ -64,10 +65,10 @@ margin-top: 8px
   right: 0px;
   width: 125px;
   height: 125px;
-  line-height: 109px;
+  line-height: 100px;
   font-size: 6em;
-  border: 3px solid #FFFFFF;
   color: #FFFFFF;
+  box-shadow: -10px -10px 30px #000000;
 }
 
 .dashboardOfTasks{
@@ -78,9 +79,13 @@ margin-top: 8px
 
 .taskColHeader > h1 {
   font-size: 2em;
-  color: #FFFFFF;
   font-weight: 700;
   letter-spacing: 5px;
+  text-shadow: 0px 2px 2px black;
+  color: #FFFFFF;
+  margin-bottom: 5%;
+  /*color: #222;*/
+
 }
 
 .taskRow{
@@ -99,6 +104,7 @@ margin-top: 8px
   background-image: url('../images/sticky_note.png');
   background-size: cover;
   background-repeat: no-repeat;
+  box-shadow: -5px -5px 10px #000000;
 }
 
 .taskTitle{
