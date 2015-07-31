@@ -119,7 +119,7 @@
 
   <template name="editTaskTemplate">
       <a href='#' data-reveal-id="editTaskModal" class='editLink'>
-        <div class="taskEdit">Edit</div>
+        <div class="taskEdit"></div>
       </a>
       <div id="editTaskModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
         <h2 id="modalTitle">Edit your task!</h2>
@@ -150,6 +150,7 @@
             </select>
           </div>
         </div>
+
         <input type="submit" value='Save Changes' class="button editTaskSubmit">
         <button class='archiveTask'>Archive</button>
     </form>
