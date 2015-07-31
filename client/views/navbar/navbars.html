@@ -1,6 +1,6 @@
 <template name="navbarLoggedIn">
 
-    <div id="navUserNameBox" class="small-12 medium-4 columns">
+    <div id="navUserNameBox" class="small-12 medium-5 columns">
     {{#if notOnGlobalDashboard}}
       <a href="{{pathFor route='profile'}}">
         <h1 id='navUserName'>{{username}}'s Kan Board</h1>
@@ -11,14 +11,14 @@
     </div>
     <div id="navButtonContainer" class="small-12 medium-4 columns">
     {{#if notOnDashboard}}
-      <a href="/dashboard">Dashboard</a>
+      <a id="navDashboardLink" href="/dashboard">Dashboard</a>
     {{/if}}
     {{#if notOnGlobalDashboard}}
-      <a href="/globaldashboard">Global</a>
+      <a id="navGlobalDashboardLink" href="/globaldashboard">Global</a>
     {{/if}}
       <!-- <a href="/profile">Profile</a> -->
     {{#if notOnProfile}}
-       <a href="{{pathFor 'profile'}}">Profile</a>
+       <a id="navProfileLink" href="{{pathFor 'profile'}}">Profile</a>
     {{/if}}
       <a href="/" class="logout">
         Logout

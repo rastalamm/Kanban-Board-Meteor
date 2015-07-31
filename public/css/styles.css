@@ -26,17 +26,31 @@ margin-top: 8px
 }
 
 #navUserNameBox{
-
+  text-align: right;
 }
 
 #navUserName{
-  font-size: 1.4em;
-  line-height: 70px;
+  font-weight: 500;
+  font-size: 2em;
+  line-height: 57px;
 }
 
 #navButtonContainer{
   text-align: right;
   line-height: 70px;
+  font-size: 1.2em;
+}
+
+#navDashboardLink{
+
+}
+
+#navGlobalDashboardLink{
+
+}
+
+#navProfileLink{
+  margin: 0 15%;
 }
 
 .mainBodyContent{
@@ -180,6 +194,8 @@ margin-top: 8px
 }
 
 .task_count_box > h3{
+  text-shadow: 0px 2px 2px black;
+  letter-spacing: 1px;
   color: #FFFFFF;
 }
 
