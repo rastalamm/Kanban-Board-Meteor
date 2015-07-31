@@ -9,6 +9,7 @@
       <h1 id='navUserName'>Community Kan Board</h1>
     {{/if}}
     </div>
+
     <div id="navButtonContainer" class="small-12 medium-4 columns">
     {{#if notOnDashboard}}
       <a id="navDashboardLink" href="/dashboard">Dashboard</a>
@@ -16,7 +17,8 @@
     {{#if notOnGlobalDashboard}}
       <a id="navGlobalDashboardLink" href="/globaldashboard">Global</a>
     {{/if}}
-      <!-- <a href="/profile">Profile</a> -->
+
+
     {{#if notOnProfile}}
        <a id="navProfileLink" href="{{pathFor 'profile'}}">Profile</a>
     {{/if}}
@@ -28,7 +30,7 @@
 </template>
 
 <template name="navbarLoggedOut">
-  <div id="navText" class="hide-for-small-only medium-8 columns">
+  <div id="navText" class="hide-for-small-only medium-7 medium-offset-2 columns">
     <h1>Get ready to organize</h1>
   </div>
 </template>
