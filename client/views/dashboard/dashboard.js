@@ -35,6 +35,9 @@ Template.task.helpers({
 });
 
 Template.dashboard.events({
+  'click #archiveTaskButton' : function(evt, tmpl){
+    TaskCollection.update({_id:Meteor.userId()},{$set:{status:'archived'}})
+  }
 
 });
 
