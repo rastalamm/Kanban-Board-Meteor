@@ -16,7 +16,7 @@ Router.route('/dashboard',{
   template:'dashboard'
 });
 Router.route('/globaldashboard',{
-  template:'globalDashboard'
+  template:'dashboard'
 });
 Router.route('/profile',{
   template:'profile'

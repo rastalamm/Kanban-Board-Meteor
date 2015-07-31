@@ -13,9 +13,35 @@ Template.dashboard.destroyed = function(){
 };
 
 Template.dashboard.helpers({
-  toDoTasks: function(){ return TaskCollection.find({userId: Meteor.userId(), status: 'todo'}); },
-  inProgressTasks: function(){ return TaskCollection.find({userId: Meteor.userId(), status: 'inProgress'}); },
-  doneTasks: function(){ return TaskCollection.find({userId: Meteor.userId(), status: 'done'}); }
+  toDoTasks: function(){
+    if(Router.current().route.getName() === 'dashboard'){
+      return TaskCollection.find({userId: Meteor.userId(), status: 'todo'});
+    }else if(Router.current().route.getName() === 'globaldashboard'){
+      return TaskCollection.find({status: 'todo' , privacy: 'public'});
+    }
+ },
+
+  inProgressTasks: function(){
+    if(Router.current().route.getName() === 'dashboard'){
+      return TaskCollection.find({userId: Meteor.userId(), status: 'inProgress'});
+    }else if(Router.current().route.getName() === 'globaldashboard'){
+      return TaskCollection.find({status: 'inProgress' , privacy: 'public'});
+    }
+ },
+  doneTasks: function(){
+    if(Router.current().route.getName() === 'dashboard'){
+      return TaskCollection.find({userId: Meteor.userId(), status: 'done'});
+    }else if(Router.current().route.getName() === 'globaldashboard'){
+      return TaskCollection.find({status: 'done' , privacy: 'public'});
+    }
+ },
+ localDashboard : function(){
+  if(Router.current().route.getName() === 'dashboard'){
+    return true;
+  }else{
+    return false;
+  }
+ }
 });
 
 Template.task.helpers({
@@ -123,12 +149,9 @@ Template.editTaskTemplate.events({
       }
 
       $('.close-reveal-modal').click();
+      return false;
     };
   }
-  // 'click .editTaskSubmit' : function(evt,tmpl){
-  //   console.log('were in')
-  // }
-
 });
 
 Template.task.events({
