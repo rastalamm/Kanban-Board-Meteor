@@ -45,26 +45,52 @@ Template.register.onRendered(function(){
 
 
 Template.login.onRendered(function(){
-var validator =  $('.login').validate();
-//     console.log("happpen");
 
   var validator = $('.login').validate({
-    submitHandler : function(event){
-      var username = event.target.username.value;
-      var passwordVar = event.target.loginPassword.value;
-      Meteor.loginWithPassword(username, passwordVar, function (error){
-          alert(error.reason);
+    submitHandler: function(){
+      console.log($(event.target).find('#loginUsername').val())
+      var username = $(event.target).find('#loginUsername').val();
+      var password = $(event.target).find('#loginPassword').val();
+      Meteor.loginWithPassword(username, password, function(error){
         if(error){
+          console.log(error.reason);
           validator.showErrors({
             username: error.reason
-          });
-        }else{
-          Router.go('/dashboard')
+          })
+        } else {
+          var currentRoute = Router.current().route.getName();
+          if(currentRoute == "login"){
+              Router.go("/dashboard");
+          }
         }
       });
     }
-
   });
+
+
+    console.log("happpen");
+
+  // var validator = $('.login').validate({
+
+  //   submitHandler : function(event){
+
+  //     var username = event.target.username.value;
+  //     alert(username + 'username')
+  //     var passwordVar = event.target.loginPassword.value;
+  //     Meteor.loginWithPassword(username, passwordVar, function (error){
+  //         alert(error.reason);
+  //       if(error){
+  //         validator.showErrors({
+  //           username: error.reason
+  //         });
+  //       }else{
+  //         alert('dont go');
+  //         Router.go('/dashboard')
+  //       }
+  //     });
+  //   }
+
+  // });
 
 });
 
