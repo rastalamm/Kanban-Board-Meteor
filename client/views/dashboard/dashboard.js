@@ -36,9 +36,11 @@ Template.task.helpers({
 
 Template.dashboard.events({
   'click #archiveTaskButton' : function(evt, tmpl){
-    TaskCollection.update({_id:Meteor.userId()},{$set:{status:'archived'}})
+    var doneTasks = TaskCollection.find({userId:Meteor.userId(), status:'done'}).fetch();
+    doneTasks.forEach(function(val){
+      TaskCollection.update({_id :val._id},{$set:{status:'archived'}})
+    })
   }
-
 });
 
 Template.newTaskTemplate.events({
@@ -84,12 +86,12 @@ Template.editTaskTemplate.events({
     $('.colorSelect').val(tmpl.data.color);
     $('.privacySelect').val(tmpl.data.privacy);
 
-    $('.deleteTask').click(deleteTask);
+    $('.archiveTask').click(archiveTask);
     $('.editTaskSubmit').click(editSubmit);
 
 
-    function deleteTask(){
-      TaskCollection.remove({_id:taskId})
+    function archiveTask(){
+      TaskCollection.update({_id:taskId},{$set:{status:'archived'}})
       $('.close-reveal-modal').click();
       return;
 
