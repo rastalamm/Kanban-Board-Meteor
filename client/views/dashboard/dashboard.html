@@ -49,9 +49,11 @@
       <p class='taskBody' contenteditable='true'>{{body}}</p>
     </div>
     <div class='taskButtonRow'>
-      <div class='taskEditButton'>
-        {{> editTaskTemplate}}
-      </div>
+      {{#if myTask}}
+        <div class='taskEditButton'>
+          {{> editTaskTemplate}}
+        </div>
+      {{/if}}
       <div class="taskArrow">
         <a href="" class="moveTaskAlong">
         {{#if complete}}

@@ -19,7 +19,16 @@ Template.dashboard.helpers({
 });
 
 Template.task.helpers({
-  currentColor: function(){return 'taskHouse '+this.color}
+  currentColor: function(){
+    // console.log('this',this,'this userid',Meteor.userId())
+    return 'taskHouse '+this.color
+  },
+  myTask: function(){
+    if(this.userId === Meteor.userId()){
+      return true;
+    }
+    return false;
+  }
 });
 
 
