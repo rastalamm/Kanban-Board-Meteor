@@ -1,9 +1,13 @@
 <template name="navbarLoggedIn">
   <div class="row">
     <div id="navUserNameBox" class="small-12 medium-5 columns">
+    {{#if notOnGlobalDashboard}}
       <a href="{{pathFor route='profile'}}">
         <h1 id='navUserName'>{{username}}'s Kan Board</h1>
       </a>
+    {{else}}
+      <h1 id='navUserName'>Community Kan Board</h1>
+    {{/if}}
     </div>
     <div id="navButtonContainer" class="hide-for-small-only medium-7 columns">
     {{#if notOnDashboard}}
