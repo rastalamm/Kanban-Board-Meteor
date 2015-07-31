@@ -1,15 +1,15 @@
 
 Template.dashboard.rendered = function(){
-  console.log('rendered');
+
 };
 
 Template.dashboard.created = function(){
-  console.log('created');
+
 
 };
 
 Template.dashboard.destroyed = function(){
-  console.log('destroyed');
+
 };
 
 Template.dashboard.helpers({
@@ -34,6 +34,9 @@ Template.task.helpers({
   }
 });
 
+Template.dashboard.events({
+
+});
 
 Template.newTaskTemplate.events({
   'click #addTaskSubmit' : function(evt, tmpl){
