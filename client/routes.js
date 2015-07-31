@@ -35,7 +35,4 @@ Router.route('/',{
       this.next();
   }
 })
-// Router.route('/',{
-//   template: 'dashboard'
-// })
 
