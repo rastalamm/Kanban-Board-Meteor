@@ -42,11 +42,19 @@
  <template name='task'>
   <div class={{currentColor}}>
     <div class="taskTitleContainer">
+    {{#if myTask}}
       <h2 class="taskTitle" contenteditable='true'>{{title}}</h2>
+    {{else}}
+    <h2 class="taskTitle" >{{title}}</h2>
+    {{/if}}
     </div>
 
     <div class="taskBodyContainer">
+    {{#if myTask}}
       <p class='taskBody' contenteditable='true'>{{body}}</p>
+    {{else}}
+      <p class='taskBody'>{{body}}</p>
+    {{/if}}
     </div>
     <div class='taskButtonRow'>
       {{#if myTask}}
@@ -54,6 +62,7 @@
           {{> editTaskTemplate}}
         </div>
       {{/if}}
+    {{#if myTask}}
       <div class="taskArrow">
         <a href="" class="moveTaskAlong">
         {{#if complete}}
@@ -63,6 +72,13 @@
         {{/if}}
         </a>
       </div>
+    {{else}}
+      <div class="taskOwner">
+        <span>
+          {{taskOwner}}
+        </span>
+      </div>
+    {{/if}}
     </div>
   </div>
 

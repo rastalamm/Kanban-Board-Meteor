@@ -28,6 +28,9 @@ Template.task.helpers({
       return true;
     }
     return false;
+  },
+  taskOwner: function(){
+    return this.username;
   }
 });
 
