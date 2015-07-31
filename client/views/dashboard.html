@@ -40,7 +40,7 @@
  </template>
 
  <template name='task'>
-  <div class=" taskHouse">
+  <div class={{currentColor}}>
     <div class="taskTitleContainer">
       <h2 class="taskTitle" contenteditable='true'>{{title}}</h2>
     </div>
@@ -73,6 +73,13 @@
  <template name="newTaskTemplate">
     <input type="text" placeholder='task title (up to 22 characters)' name='title' maxlength="22" id="newTaskTitle">
     <input  type="text" placeholder='task description' maxlength="200" name='body' id="newTaskBody">
+    <select class="colorSelect">
+      <option value="yellow">yellow</option>
+      <option value="pink">pink</option>
+      <option value="green">green</option>
+      <option value="orange">orange</option>
+      <option value="blue">blue</option>
+      </select>
     <input type="submit" value='add' class="button" id='addTaskSubmit'>
  </template>
 
@@ -90,9 +97,11 @@
         <option value="done">done</option>
       </select>
       <select class="colorSelect">
-        <option value="yellow">yellow</option>
+         <option value="yellow">yellow</option>
         <option value="pink">pink</option>
         <option value="green">green</option>
+        <option value="orange">orange</option>
+        <option value="blue">blue</option>
       </select>
       <input type="submit" value='Save Changes' class="button editTaskSubmit">
       <button class='deleteTask'>Delete</button>
