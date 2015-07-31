@@ -18,15 +18,22 @@ Template.dashboard.helpers({
   doneTasks: function(){ return TaskCollection.find({userId: Meteor.userId(), status: 'done'}); }
 });
 
+Template.task.helpers({
+  currentColor: function(){return 'taskHouse '+this.color}
+});
+
 
 Template.newTaskTemplate.events({
   'click #addTaskSubmit' : function(evt, tmpl){
     var taskTitle = tmpl.find('#newTaskTitle').value;
     var taskBody = tmpl.find('#newTaskBody').value;
+    var taskColor = tmpl.find('.colorSelect').value;
+    console.log('color',taskColor)
     if(taskTitle){
       TaskCollection.insert({
         title: taskTitle,
         body: taskBody,
+        color: taskColor,
         status: 'todo',
         complete: false,
         added: Date.now(),
@@ -47,13 +54,18 @@ Template.newTaskTemplate.events({
 Template.editTaskTemplate.events({
   'click .editLink' : function(evt, tmpl){
     var taskId = tmpl.data._id;
+    // var currentColor = TaskCollection.find({_id:taskId}).fetch().color;
+    console.log('current color',tmpl.data.color)
+
 
     $('.editTaskTitle').val(this.title);
     $('.editTaskBody').val(tmpl.data.body);
     $('.editStatus').val(tmpl.data.status);
+    $('.colorSelect').val(tmpl.data.color);
 
     $('.deleteTask').click(deleteTask);
     $('.editTaskSubmit').click(editSubmit);
+
 
     function deleteTask(){
       TaskCollection.remove({_id:taskId})
@@ -63,20 +75,27 @@ Template.editTaskTemplate.events({
     }
 
     function editSubmit(event){
-      console.log('taskId:',taskId)
-      console.log($(event.target).parent().find('.editTaskTitle').val(),'event')
 
       var newTaskTitle = $(event.target).parent().find('.editTaskTitle').val();
       var newTaskBody = $(event.target).parent().find('.editTaskBody').val();
       var newStatus = $(event.target).parent().find('.editStatus').val();
+      var newColor = $(event.target).parent().find('.colorSelect').val();
 
-      TaskCollection.update({_id:taskId},{$set:{title:newTaskTitle, body: newTaskBody, status: newStatus}});
+      TaskCollection.update({
+              _id: taskId
+            },
+              {$set:{
+                title:newTaskTitle,
+                body: newTaskBody,
+                status: newStatus,
+                color: newColor
+            }});
       if(newStatus === 'complete'){
         TaskCollection.update({_id:taskId},{$set:{complete:true}});
       }else{
         TaskCollection.update({_id:taskId},{$set:{complete:false}});
       }
-      console.log(tmpl.data)
+
       $('.close-reveal-modal').click();
     };
   }
