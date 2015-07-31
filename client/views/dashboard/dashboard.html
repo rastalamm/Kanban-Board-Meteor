@@ -10,8 +10,8 @@
 {{#if localDashboard}}
   <div id="archiveTaskButton"></div>
 {{/if}}
-  <div class="dashboardOfTasks">
-    <div class="taskRow" >
+  <div class="dashboardOfTasks row">
+    <div class="taskRow small-12 medium-4 columns" >
       <div class="taskColHeader">
         <h1>To Do</h1>
       </div>
@@ -20,7 +20,7 @@
       {{/each}}
     </div>
 
-    <div class="taskRow" id="inProgressCol">
+    <div class="taskRow small-12 medium-4 columns" id="inProgressCol">
       <div class="taskColHeader">
         <h1>In Progress</h1>
       </div>
@@ -29,7 +29,7 @@
       {{/each}}
     </div>
 
-    <div class="taskRow" id="doneCol">
+    <div class="taskRow small-12 medium-4 columns" id="doneCol">
       <div id="doneButton" class="taskColHeader">
         <h1 >Done</h1>
       </div>
@@ -59,30 +59,31 @@
       <p class='taskBody'>{{body}}</p>
     {{/if}}
     </div>
-    <div class='taskButtonRow'>
+    <div class='taskButtonRow row'>
       {{#if myTask}}
-        <div class='taskEditButton'>
+        <div class='taskEditButton small-4 small-offset-2 columns'>
           {{> editTaskTemplate}}
         </div>
-      {{/if}}
-    {{#if myTask}}
-      <div class="taskArrow">
-        <a href="" class="moveTaskAlong">
-        {{#if complete}}
-          <img id="statusImage" src="./images/tick.svg">
-        {{else}}
-          <img id="statusImage" src="./images/rightarrow.svg">
-        {{/if}}
-        </a>
-      </div>
-    {{else}}
-      <div class="taskOwner">
-        <span>
-          {{taskOwner}}
-        </span>
+        <div class="taskArrow small-6 columns">
+          <a href="" class="moveTaskAlong">
+          {{#if complete}}
+            <img id="statusImage" src="./images/tick.svg">
+          {{else}}
+            <img id="statusImage" src="./images/rightarrow.svg">
+          {{/if}}
+          </a>
+        </div>
+      {{else}}
+        <div class="taskOwnerBox small-12 columns">
+          <p class="taskOwnerName">
+            {{taskOwner}}
+          </p>
       </div>
     {{/if}}
     </div>
+
+
+
     <div class="row comments_section">
       <div class="small-12">
         <ul class="accordion" data-accordion role="tablist">
@@ -136,37 +137,37 @@
       </a>
       <div id="editTaskModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
         <h2 id="modalTitle">Edit your task!</h2>
-    <form>
-        <input type="text"  name='title' class="editTaskTitle">
-        <textarea rows="5" type="text"  name='body' maxlength="200" class="editTaskBody" ></textarea>
-        <div class="row">
-          <div class="small-4 columns">
-            <select class="editStatus">
-              <option value="todo">to do</option>
-              <option value="inProgress">in progress</option>
-              <option value="done">done</option>
-            </select>
-          </div>
-          <div class="small-4 columns">
-            <select class="colorSelect">
-              <option value="yellow">yellow</option>
-              <option value="pink">pink</option>
-              <option value="green">green</option>
-              <option value="orange">orange</option>
-              <option value="blue">blue</option>
-            </select>
-          </div>
-          <div class="small-4 columns">
-            <select name='privacy' class="privacySelect">
-              <option value="public">public</option>
-              <option value="private">private</option>
-            </select>
-          </div>
-        </div>
+        <form>
+            <input type="text"  name='title' class="editTaskTitle">
+            <textarea rows="5" type="text"  name='body' maxlength="200" class="editTaskBody" ></textarea>
+            <div class="row">
+              <div class="small-4 columns">
+                <select class="editStatus">
+                  <option value="todo">to do</option>
+                  <option value="inProgress">in progress</option>
+                  <option value="done">done</option>
+                </select>
+              </div>
+              <div class="small-4 columns">
+                <select class="colorSelect">
+                  <option value="yellow">yellow</option>
+                  <option value="pink">pink</option>
+                  <option value="green">green</option>
+                  <option value="orange">orange</option>
+                  <option value="blue">blue</option>
+                </select>
+              </div>
+              <div class="small-4 columns">
+                <select name='privacy' class="privacySelect">
+                  <option value="public">public</option>
+                  <option value="private">private</option>
+                </select>
+              </div>
+            </div>
 
-        <input type="submit" value='Save Changes' class="button editTaskSubmit">
-        <button class='archiveTask'>Archive</button>
-    </form>
+            <input type="submit" value='Save Changes' class="button editTaskSubmit">
+            <button class='archiveTask'>Archive</button>
+        </form>
         <a class="close-reveal-modal" aria-label="Close">&#215;</a>
       </div>
  </template>

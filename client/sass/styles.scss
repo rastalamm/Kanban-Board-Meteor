@@ -1,5 +1,31 @@
+//Variables
+$yellowNoteBackground : url('../images/sticky-note-yellow-copy.png');
+$blueNoteBackground : url('../images/sticky-note-blue.png');
+$pinkNoteBackground : url('../images/sticky-note-pink.png');
+$orangeNoteBackground : url('../images/sticky-note-orange.png');
+$greenNoteBackground : url('../images/sticky-note-green.png');
+$mainBackground : url('../images/roughwood.jpeg');
+
+
+$small : "only screen and (max-width: 640px)";
+$medium : "only screen and (min-width: 641px) and (max-width: 1024px)";
+$large : "only screen and (min-width: 1025px)";
+
+// $small-breakpoint:  em-calc(940)  !default;
+// $medium-breakpoint: em-calc(941) !default;
+// $small-range:   (0, $small-breakpoint) !default; /* 0, 640px */
+// $medium-range:  ($small-breakpoint  + em-calc(1), $medium-breakpoint) !default; /* 641px, 1024px */
+
+
+// // Media Queries
+// $screen: "only screen" !default;
+
+// $landscape: "#{$screen} and (orientation: landscape)" !default;
+// $portrait: "#{$screen} and (orientation: portrait)" !default;
+
+
 body{
-  background-image: url('../images/roughwood.jpeg');
+  background-image: $mainBackground;
   background-size: cover;
 }
 
@@ -8,23 +34,33 @@ body{
   padding-top: 10px;
   border-bottom: 5px solid;
   background-color: #FFFFFF;
-  height: 70px;
+  height: 55px;
+
+  @media #{$medium, $large}{
+    height: 70px;
+
+  }
 
   #navLogo > h1{
     display: none;
   }
 
   #navText > h1{
-    line-height: 38px;
-    font-size: 2.2em;
     text-align: right;
-    margin-right: 10%;
+    font-size: 1.7em;
+    line-height: 27px;
+
+    @media #{$medium, $large}{
+      line-height: 38px;
+      font-size: 2.2em;
+      margin-right: 10%;
+    }
+
   }
 
 
   #navUserName{
     text-align: center;
-    border: 1px solid black;
     font-weight: 500;
     font-size: 2em;
     line-height: 38px;
@@ -53,186 +89,179 @@ body{
 
 }
 
+#newTaskButton{
+  position: fixed;
+  bottom: -10px;
+  left: -13px;
+  width: 75px;
+  height: 75px;
+  background-color: #2db34a;
+  font-size: 4em;
+  line-height: 60px;
+  border-radius: 58%;
+  color: #FFFFFF;
+  border: 3px solid #FFFFFF;
+  box-shadow: 5px -5px 20px #000000;
+}
+
+#newTaskButton:hover{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 125px;
+  height: 125px;
+  line-height: 100px;
+  font-size: 6em;
+  color: #FFFFFF;
+  box-shadow: 10px -10px 30px #000000;
+}
+
+
+#archiveTaskButton{
+  background-image: url('../images/flame.png');
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  bottom: -10px;
+  right: -13px;
+  width: 75px;
+  height: 75px;
+  background-color: red;
+  font-size: 4em;
+  line-height: 60px;
+  border-radius: 58%;
+  color: #FFFFFF;
+  border: 3px solid #FFFFFF;
+  box-shadow: -5px -5px 20px #000000;
+}
+
+#archiveTaskButton:hover{
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  width: 125px;
+  height: 125px;
+  line-height: 100px;
+  font-size: 6em;
+  color: #FFFFFF;
+  box-shadow: -10px -10px 30px #000000;
+}
 
 
 
 
-// .mainBodyContent{
-//   width: 100%;
-//   text-align: center;
-// }
+.mainBodyContent{
+  width: 100%;
+  text-align: center;
 
-// #newTaskButton{
-//   position: fixed;
-//   bottom: -10px;
-//   left: -13px;
-//   width: 75px;
-//   height: 75px;
-//   background-color: #2db34a;
-//   font-size: 4em;
-//   line-height: 60px;
-//   border-radius: 58%;
-//   color: #FFFFFF;
-//   border: 3px solid #FFFFFF;
-//   box-shadow: 5px -5px 20px #000000;
-// }
+  .taskColHeader > h1 {
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-shadow: 0px 2px 2px black;
+    color: #FFFFFF;
+  }
 
-// #newTaskButton:hover{
-//   position: fixed;
-//   bottom: 0px;
-//   left: 0px;
-//   width: 125px;
-//   height: 125px;
-//   line-height: 100px;
-//   font-size: 6em;
-//   color: #FFFFFF;
-//   box-shadow: 10px -10px 30px #000000;
-// }
+  .yellow{
+    background-image: $yellowNoteBackground;
+  }
 
-// #archiveTaskButton{
-//   background-image: url('../images/flame.png');
-//   background-size: 65%;
-//   background-repeat: no-repeat;
-//   background-position: center;
-//   position: fixed;
-//   bottom: -10px;
-//   right: -13px;
-//   width: 75px;
-//   height: 75px;
-//   background-color: red;
-//   font-size: 4em;
-//   line-height: 60px;
-//   border-radius: 58%;
-//   color: #FFFFFF;
-//   border: 3px solid #FFFFFF;
-//   box-shadow: -5px -5px 20px #000000;
-// }
+  .blue{
+    background-image: $blueNoteBackground;
+  }
 
-// #archiveTaskButton:hover{
-//   position: fixed;
-//   bottom: 0px;
-//   right: 0px;
-//   width: 125px;
-//   height: 125px;
-//   line-height: 100px;
-//   font-size: 6em;
-//   color: #FFFFFF;
-//   box-shadow: -10px -10px 30px #000000;
-// }
+  .pink{
+    background-image: $pinkNoteBackground;
+  }
 
-// .dashboardOfTasks{
-//   width: 100%;
-//   border: 1px solid;
-//   margin-top: 1%;
-// }
+  .orange{
+    background-image: $orangeNoteBackground;
+  }
 
-// .taskColHeader > h1 {
-//   font-size: 2em;
-//   font-weight: 700;
-//   letter-spacing: 5px;
-//   text-shadow: 0px 2px 2px black;
-//   color: #FFFFFF;
-//   margin-bottom: 5%;
-// }
+  .green{
+    background-image: $greenNoteBackground;
+  }
 
-// .taskRow{
-//   width: 33%;
-//   display: inline-block;
-//   vertical-align: top;
-//   padding: 0 2%;
-// }
+  .taskHouse{
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    margin-bottom: 5%;
+    padding: 2% 8%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.5);
 
-// .taskHouse{
-//   width: 300px;
-//   height: 300px;
-//   margin: auto;
-//   margin-bottom: 5%;
-//   padding: 2% 8%;
-//   background-image: url('../images/sticky-note-yellow-copy.png');
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.5);
-// }
 
-// .taskHouse.yellow{
-//   background-image: url('../images/sticky-note-yellow-copy.png');
-// }
+    .taskTitle{
+      font-size: 1.3em;
+      text-align: center;
+      padding-bottom: 2%;
+      border-bottom: 1px dashed black;
+      overflow: hidden;
+      white-space: nowrap;
+    }
 
-// .taskHouse.blue{
-//   background-image: url('../images/sticky-note-blue.png');
-// }
+    .taskBody{
+      height: 150px;
+      border: 1px solid black;
+      overflow: hidden;
+      white-space: nowrap;
+    }
 
-// .taskHouse.pink{
-//   background-image: url('../images/sticky-note-pink.png');
-// }
+    .taskButtonRow{
+      border: 1px solid black;
+      height: 40px;
+    }
 
-// .taskHouse.orange{
-//   background-image: url('../images/sticky-note-orange.png');
-// }
+    .taskEdit{
+      background-image: url('../images/pencil.svg');
+      background-size: cover;
+      width: 25px;
+      height: 25px;
+    }
 
-// .taskHouse.green{
-//   background-image: url('../images/sticky-note-green.png');
-// }
+    .taskEdit:hover{
+      width: 30px;
+      height: 30px;
+    }
 
-// .taskTitle{
-//   padding: 0 2%;
-// }
+    #statusImage{
+      background-image: url('../images/rightarrow.svg');
+      background-size: cover;
+      width: 30px;
+      height: 30px;
+    }
 
-// .taskTitle{
-//   font-size: 1.3em;
-//   text-align: center;
-//   padding-bottom: 2%;
-//   border-bottom: 1px dashed black;
-//   overflow: hidden;
-//   white-space: nowrap;
-// }
+    #statusImage:hover{
+      width: 35px;
+      height: 35px;
+    }
+  }
 
-// .taskBody{
-//   height: 150px;
-// }
+}
 
-// .taskButtonRow{
-//   padding-top: 2%
-// }
 
-// .taskEditButton{
-//   display: inline-block;
-//   width: 45%;
-// }
 
-// .taskArrow{
-//   display: inline-block;
-//   width: 45%;
-// }
+#newTaskModal, #editTaskModal{
+  width: 450px;
+}
 
-// #statusImage{
-//   width: 40%;
-// }
+.archiveTask{
+  background-color: red;
+  float: right;
+}
 
-// .archiveTask{
-//   background-color: red;
-//   float: right;
-// }
+.deleteTask:hover{
+  background-color: DarkRed;
+}
 
-// .deleteTask:hover{
-//   background-color: DarkRed;
-// }
 
-// #newTaskModal, #editTaskModal{
-//   width: 450px;
-// }
 
-// .taskEdit{
-//   background-image: url('../images/pencil.svg');
-//   background-size: cover;
-//   width: 25px;
-//   height: 25px;
-// }
 
-// .taskEdit:hover{
-//   width: 30px;
-//   height: 30px;
-// }
+
+
 
 // /*
 // Profile Section

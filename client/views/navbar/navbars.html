@@ -1,6 +1,27 @@
 <template name="navbarLoggedIn">
 
-    <div id="navUserNameBox" class="small-12 medium-5 columns">
+
+  <div id="navButtonContainer" class="small-8 medium-8 hide-for-large columns">
+    {{#if notOnDashboard}}
+      <a id="navDashboardLink" href="/dashboard">Dashboard</a>
+    {{/if}}
+    {{#if notOnGlobalDashboard}}
+      <a id="navGlobalDashboardLink" href="/globaldashboard">Global</a>
+    {{/if}}
+
+
+    {{#if notOnProfile}}
+       <a id="navProfileLink" href="{{pathFor 'profile'}}">Profile</a>
+    {{/if}}
+      <a id="navLogOutLink" href="/" class="logout">
+        Logout
+      </a>
+  </div>
+
+
+
+
+    <div id="navUserNameBox" class="small-12 medium-12 large-4 columns">
     {{#if notOnGlobalDashboard}}
       <a href="{{pathFor route='profile'}}">
         <h1 id='navUserName'>{{username}}'s Kan Board</h1>
@@ -10,7 +31,7 @@
     {{/if}}
     </div>
 
-    <div id="navButtonContainer" class="small-12 medium-4 columns">
+    <div id="navButtonContainer" class="hide-for-small-only hide-for-medium-only large-4 columns">
     {{#if notOnDashboard}}
       <a id="navDashboardLink" href="/dashboard">Dashboard</a>
     {{/if}}
@@ -30,7 +51,7 @@
 </template>
 
 <template name="navbarLoggedOut">
-  <div id="navText" class="hide-for-small-only medium-7 medium-offset-2 columns">
+  <div id="navText" class="small-7 medium-7 medium-offset-1 columns">
     <h1>Get ready to organize</h1>
   </div>
 </template>
