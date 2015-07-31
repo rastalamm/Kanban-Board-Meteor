@@ -61,7 +61,7 @@ body{
 #newTaskButton{
   position: fixed;
   bottom: -10px;
-  right: -13px;
+  left: -13px;
   width: 75px;
   height: 75px;
   background-color: #2db34a;
@@ -70,10 +70,41 @@ body{
   border-radius: 58%;
   color: #FFFFFF;
   border: 3px solid #FFFFFF;
-  box-shadow: -5px -5px 20px #000000;
+  box-shadow: 5px 5px 20px #000000;
 }
 
 #newTaskButton:hover{
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 125px;
+  height: 125px;
+  line-height: 100px;
+  font-size: 6em;
+  color: #FFFFFF;
+  box-shadow: 10px 10px 30px #000000;
+}
+
+#archiveTaskButton{
+  background-image: url('../images/flame.png');
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  bottom: -10px;
+  right: -13px;
+  width: 75px;
+  height: 75px;
+  background-color: red;
+  font-size: 4em;
+  line-height: 60px;
+  border-radius: 58%;
+  color: #FFFFFF;
+  border: 3px solid #FFFFFF;
+  box-shadow: -5px -5px 20px #000000;
+}
+
+#archiveTaskButton:hover{
   position: fixed;
   bottom: 0px;
   right: 0px;
