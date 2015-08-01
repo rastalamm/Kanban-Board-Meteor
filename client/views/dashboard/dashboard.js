@@ -12,9 +12,14 @@ Template.dashboard.destroyed = function(){
 
 };
 
+
+Template.task.rendered = function(){
+
+};
+
 Template.dashboard.helpers({
   toDoTasks: function(){
-    if(Router.current().route.getName() === 'dashboard'){
+   if(Router.current().route.getName() === 'dashboard'){
       return TaskCollection.find({userId: Meteor.userId(), status: 'todo'});
     }else if(Router.current().route.getName() === 'globaldashboard'){
       return TaskCollection.find({status: 'todo' , privacy: 'public'});
@@ -46,7 +51,6 @@ Template.dashboard.helpers({
 
 Template.task.helpers({
   currentColor: function(){
-    // console.log('this',this,'this userid',Meteor.userId())
     return 'taskHouse '+this.color
   },
   myTask: function(){
@@ -57,8 +61,28 @@ Template.task.helpers({
   },
   taskOwner: function(){
     return this.username;
+  },
+  commentArray: function(){
+    var taskComments = CommentCollection.find({taskId:this._id}).fetch();
+    console.log('taskComments',taskComments);
+    return taskComments;
+  },
+  commentTotal: function(){
+    return CommentCollection.find({taskId:this._id}).fetch().length;
   }
 });
+
+Template.comment.helpers({
+  commentAuthor: function(){
+    return this.username;
+  },
+  commentBody: function(){
+    return this.body;
+  },
+  commentId: function(){
+    return this._id;
+  }
+})
 
 Template.dashboard.events({
   'click #archiveTaskButton' : function(evt, tmpl){
@@ -83,7 +107,6 @@ Template.newTaskTemplate.events({
         status: 'todo',
         complete: false,
         privacy: 'public',
-        comments: [],
         added: Date.now(),
         userId: Meteor.userId(),
         username: Meteor.user().username
@@ -119,13 +142,17 @@ Template.editTaskTemplate.events({
 
     function archiveTask(){
       TaskCollection.update({_id:taskId},{$set:{status:'archived'}})
+      $('.close-reveal-modal').click(function(){
+        $('.archiveTask').unbind('click');
+      });
       $('.close-reveal-modal').click();
       return false;
 
     }
 
     function editSubmit(event){
-
+      // event.preventDefault();
+      console.log('sumbmitting edit')
       var newTaskTitle = $(event.target).parent().find('.editTaskTitle').val();
       var newTaskBody = $(event.target).parent().find('.editTaskBody').val();
       var newStatus = $(event.target).parent().find('.editStatus').val();
@@ -148,6 +175,9 @@ Template.editTaskTemplate.events({
         TaskCollection.update({_id:taskId},{$set:{complete:false}});
       }
 
+      $('.close-reveal-modal').click(function(){
+        $('.editTaskSubmit').unbind('click');
+      });
       $('.close-reveal-modal').click();
       return false;
     };
@@ -168,30 +198,84 @@ Template.task.events({
         break;
     };
   },
-  'keypress .taskHouse': function(evt, tmpl) {
-    // event.stopPropagation();
-    // event.preventDefault();
-    event.target.blur();
-
-    if (event.keyCode == 13) {
-      var newEntry = $(event.target).text();
-      console.log(newTaskTitle)
-      if(evt.target.className === 'taskTitle'){
-        if(newEntry){
-          TaskCollection.update({_id:tmpl.data._id},{$set:{title:newEntry}});
-        }else{
-          var oldTaskTitle = TaskCollection.find({_id:tmpl.data._id}).fetch()[0].title;
-          $(event.target).text(oldTaskTitle);
-        }
-      }else if(evt.target.className === 'taskBody'){
-        if(newEntry){
-          TaskCollection.update({_id:tmpl.data._id},{$set:{body:newEntry}});
-        }
+  'keypress .taskTitle': function(evt, tmpl){
+    if(event.keyCode == 13){
+      // var newEntry = $(event.target).text();
+      var newEntry = evt.target.value;
+      if(newEntry){
+        TaskCollection.update({_id:tmpl.data._id},{$set:{title:newEntry}});
+      }else{
+        var oldTaskTitle = TaskCollection.find({_id:tmpl.data._id}).fetch()[0].title;
+        evt.target.innerHTML = oldTaskTitle;
       }
-        // event.stopPropagation();
-        return false;
+      // event.stopPropagation();
+      event.preventDefault();
+      event.target.blur();
+      return false;
     }
-}
+  },
+  'keypress .taskBody': function(evt, tmpl){
+    if(event.keyCode == 13){
+      // var newEntry = $(event.target).text();
+      var newEntry = evt.target.value;
+      console.log('newEntry',newEntry);
+      if(newEntry){
+        TaskCollection.update({_id:tmpl.data._id},{$set:{body:newEntry}});
+      }else{
+        var oldTaskTitle = TaskCollection.find({_id:tmpl.data._id}).fetch()[0].body;
+        evt.target.innerHTML = oldTaskTitle;
+      }
+      // event.stopPropagation();
+      event.preventDefault();
+      event.target.blur();
+      return false;
+    }
+  },
+  'keypress .addCommentInput' : function(evt, tmpl){
+      event.stopPropagation();
+    if (event.keyCode == 13) {
+      event.target.blur();
+      var newComment = $(event.target).val();
+      console.log('new comment:',newComment);
+      console.log(tmpl.data)
+      if(newComment){
+        CommentCollection.insert({
+          userId: Meteor.userId(),
+          username: Meteor.user().username,
+          taskId: tmpl.data._id,
+          body: newComment,
+          added: Date.now()
+        });
+        $(event.target).val('');
+      }
+      return false;
+    }
+  },
+  'click .commentsIcon' : function(evt, tmpl){
+    var containerId = '#commentContainer'+tmpl.data._id;
+    var hidden = $(containerId).hasClass('hidden');
+    if(hidden){
+      $(containerId).removeClass('hidden');
+    }else{
+      $(containerId).addClass('hidden');
+    }
+  },
+  'click .taskStarButton' : function(evt, tmpl){
+    alert('we are working on this feature')
+    // var watchArray = Meteor.user().watching;
+    // if(!watchArray){
+    //   var watchArray = [];
+    // }
 
+    // if(watchArray.indexOf(tmpl.data._id) > 0){
+    //   //remove from object
+    //   watchArray.slice(watchArray.indexOf(tmpl.data._id),1)
+    // }
+    // else{
+    //   watchArray.push(tmpl.data._id)
+    // }
+    // Meteor.users.update({_id:Meteor.userId()},{$set:{watching:watchArray}})
+    // TaskCollection.update({_id:tmpl.data._id},{$set:{watchers:watchObject}})
+  }
 
 });
