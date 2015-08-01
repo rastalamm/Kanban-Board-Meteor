@@ -12,6 +12,10 @@ Template.dashboard.destroyed = function(){
 
 };
 
+
+Template.task.rendered = function(){
+};
+
 Template.dashboard.helpers({
   toDoTasks: function(){
     if(Router.current().route.getName() === 'dashboard'){
@@ -46,7 +50,6 @@ Template.dashboard.helpers({
 
 Template.task.helpers({
   currentColor: function(){
-    // console.log('this',this,'this userid',Meteor.userId())
     return 'taskHouse '+this.color
   },
   myTask: function(){
@@ -57,8 +60,23 @@ Template.task.helpers({
   },
   taskOwner: function(){
     return this.username;
+  },
+  commentArray: function(){
+    var taskComments = CommentCollection.find({taskId:this._id}).fetch();
+    console.log('taskComments',taskComments);
+    return taskComments;
   }
 });
+
+Template.comment.helpers({
+  commentAuthor: function(){
+    console.log('the comment',this);
+    return this.username;
+  },
+  commentBody: function(){
+    return this.body;
+  }
+})
 
 Template.dashboard.events({
   'click #archiveTaskButton' : function(evt, tmpl){
@@ -83,7 +101,6 @@ Template.newTaskTemplate.events({
         status: 'todo',
         complete: false,
         privacy: 'public',
-        comments: [],
         added: Date.now(),
         userId: Meteor.userId(),
         username: Meteor.user().username
@@ -119,6 +136,9 @@ Template.editTaskTemplate.events({
 
     function archiveTask(){
       TaskCollection.update({_id:taskId},{$set:{status:'archived'}})
+      $('.close-reveal-modal').click(function(){
+        $('.archiveTask').unbind('click');
+      });
       $('.close-reveal-modal').click();
       return false;
 
@@ -148,6 +168,9 @@ Template.editTaskTemplate.events({
         TaskCollection.update({_id:taskId},{$set:{complete:false}});
       }
 
+      $('.close-reveal-modal').click(function(){
+        $('.editTaskSubmit').unbind('click');
+      });
       $('.close-reveal-modal').click();
       return false;
     };
@@ -168,30 +191,60 @@ Template.task.events({
         break;
     };
   },
-  'keypress .taskHouse': function(evt, tmpl) {
-    // event.stopPropagation();
-    // event.preventDefault();
+  'keypress .taskTitle': function(evt, tmpl){
     event.target.blur();
-
-    if (event.keyCode == 13) {
-      var newEntry = $(event.target).text();
-      console.log(newTaskTitle)
-      if(evt.target.className === 'taskTitle'){
-        if(newEntry){
-          TaskCollection.update({_id:tmpl.data._id},{$set:{title:newEntry}});
-        }else{
-          var oldTaskTitle = TaskCollection.find({_id:tmpl.data._id}).fetch()[0].title;
-          $(event.target).text(oldTaskTitle);
-        }
-      }else if(evt.target.className === 'taskBody'){
-        if(newEntry){
-          TaskCollection.update({_id:tmpl.data._id},{$set:{body:newEntry}});
-        }
+    if(event.keyCode == 13){
+      // var newEntry = $(event.target).text();
+      var newEntry = evt.target.innerHTML;
+      console.log('newEntry',newEntry);
+      if(newEntry){
+        TaskCollection.update({_id:tmpl.data._id},{$set:{title:newEntry}});
+      }else{
+        var oldTaskTitle = TaskCollection.find({_id:tmpl.data._id}).fetch()[0].title;
+        evt.target.innerHTML = oldTaskTitle;
       }
-        // event.stopPropagation();
-        return false;
+      // event.stopPropagation();
+      event.preventDefault();
+      return false;
     }
-}
+  },
+  'keypress .taskBody': function(evt, tmpl){
+    event.target.blur();
+    if(event.keyCode == 13){
+      // var newEntry = $(event.target).text();
+      var newEntry = evt.target.innerHTML;
+      console.log('newEntry',newEntry);
+      if(newEntry){
+        TaskCollection.update({_id:tmpl.data._id},{$set:{body:newEntry}});
+      }else{
+        var oldTaskTitle = TaskCollection.find({_id:tmpl.data._id}).fetch()[0].body;
+        evt.target.innerHTML = oldTaskTitle;
+      }
+      // event.stopPropagation();
+      event.preventDefault();
+      return false;
+    }
+  },
+  'keypress .addCommentInput' : function(evt, tmpl){
+      event.stopPropagation();
+    if (event.keyCode == 13) {
+      event.target.blur();
+      var newComment = $(event.target).val();
+      console.log('new comment:',newComment);
+      console.log(tmpl.data)
+      if(newComment){
+        CommentCollection.insert({
+          userId: Meteor.userId(),
+          username: Meteor.user().username,
+          taskId: tmpl.data._id,
+          body: newComment,
+          added: Date.now()
+        });
+        console.log('comment added',tmpl.data,Meteor.userId())
+      }
+      return false;
+    }
+  }
 
 
 });
