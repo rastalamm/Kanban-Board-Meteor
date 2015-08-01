@@ -1,13 +1,3 @@
-
-// Router.onBeforeAction(function(pause) {
-//     if (!Meteor.user()) {
-//         // pause();
-//         Router.go('/register');
-//     }
-//     this.next();
-// }, {except: ['/register']});
-
-
 Router.configure({
   layoutTemplate: 'layout'
 })
