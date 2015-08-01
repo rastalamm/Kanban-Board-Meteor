@@ -110,6 +110,7 @@ body{
 }
 
 #newTaskButton{
+  z-index: 1000;
   position: fixed;
   bottom: -10px;
   left: -13px;
@@ -125,6 +126,7 @@ body{
 }
 
 #newTaskButton:hover{
+  z-index: 1000;
   position: fixed;
   bottom: 0px;
   left: 0px;
@@ -138,6 +140,7 @@ body{
 
 
 #archiveTaskButton{
+  z-index: 1000;
   background-image: url('../images/flame.png');
   background-size: 65%;
   background-repeat: no-repeat;
@@ -157,6 +160,7 @@ body{
 }
 
 #archiveTaskButton:hover{
+  z-index: 1000;
   position: fixed;
   bottom: 0px;
   right: 0px;
@@ -174,6 +178,10 @@ body{
 .mainBodyContent{
   width: 100%;
   text-align: center;
+
+  .taskRow{
+    border: 1px solid white;
+  }
 
   .taskColHeader > h1 {
     font-size: 2em;
@@ -208,11 +216,15 @@ body{
     height: 300px;
     margin: auto;
     margin-bottom: 5%;
-    padding: 2% 8%;
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.5);
+    padding: 1% 2%;
 
+    @media #{$large}{
+      padding: 2% 5%;
+
+    }
 
     .taskTitle{
       font-size: 1.3em;
@@ -227,7 +239,6 @@ body{
       height: 150px;
       border: 1px solid black;
       overflow: hidden;
-      white-space: nowrap;
     }
 
     .taskButtonRow{
@@ -263,14 +274,38 @@ body{
 }
 
 
+// .custom-reveal-class {
+//   @include reveal-modal-base(
+//     // Provides reveal base styles, can be set to false to override.
+//     $base-style:true,
+//     // Sets reveal width Default: $reveal-default-width or 80%
+//     $width:75%
+//   );
+// }
 
 #newTaskModal, #editTaskModal{
-  width: 450px;
+  width: 75%;
+  margin: auto 12.5%;
+  text-align: center;
+
+  @media #{$medium}{
+    margin: auto;
+    max-width: 65%;
+  }
+
+  @media #{$large}{
+    width: 35%;
+    margin: auto;
+  }
+
+  .taskSubmitButton{
+    background-color: #2db34a;
+  }
 }
 
 .archiveTask{
   background-color: red;
-  float: right;
+  // float: right;
 }
 
 .deleteTask:hover{

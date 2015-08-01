@@ -11,7 +11,7 @@
   <div id="archiveTaskButton"></div>
 {{/if}}
   <div class="dashboardOfTasks row">
-    <div class="taskRow small-12 medium-4 columns" >
+    <div class="taskRow small-12 large-4 columns" >
       <div class="taskColHeader">
         <h1>To Do</h1>
       </div>
@@ -20,7 +20,7 @@
       {{/each}}
     </div>
 
-    <div class="taskRow small-12 medium-4 columns" id="inProgressCol">
+    <div class="taskRow small-12 large-4 columns" id="inProgressCol">
       <div class="taskColHeader">
         <h1>In Progress</h1>
       </div>
@@ -29,7 +29,7 @@
       {{/each}}
     </div>
 
-    <div class="taskRow small-12 medium-4 columns" id="doneCol">
+    <div class="taskRow small-12 large-4 columns" id="doneCol">
       <div id="doneButton" class="taskColHeader">
         <h1 >Done</h1>
       </div>
@@ -111,23 +111,23 @@
     <div class="row">
       <div class="small-6 columns">
         <select name='color' class="colorSelect">
-          <option value="yellow">yellow</option>
-          <option value="pink">pink</option>
-          <option value="green">green</option>
-          <option value="orange">orange</option>
-          <option value="blue">blue</option>
+          <option value="yellow">Yellow</option>
+          <option value="pink">Pink</option>
+          <option value="green">Green</option>
+          <option value="orange">Orange</option>
+          <option value="blue">Blue</option>
         </select>
 
       </div>
       <div class="small-6 columns">
         <select name='privacy' class="privacySelect">
-          <option value="public">public</option>
-          <option value="private">private</option>
+          <option value="public">Public</option>
+          <option value="private">Private</option>
         </select>
       </div>
     </div>
 
-    <input type="submit" value='add' class="button" id='addTaskSubmit'>
+    <input type="submit" value='Add Task' class="button taskSubmitButton" id='addTaskSubmit'>
   </form>
  </template>
 
@@ -141,31 +141,31 @@
             <input type="text"  name='title' class="editTaskTitle">
             <textarea rows="5" type="text"  name='body' maxlength="200" class="editTaskBody" ></textarea>
             <div class="row">
-              <div class="small-4 columns">
+              <div class="small-8 small-centered medium-uncentered medium-4 columns">
                 <select class="editStatus">
-                  <option value="todo">to do</option>
-                  <option value="inProgress">in progress</option>
-                  <option value="done">done</option>
+                  <option value="todo">To do</option>
+                  <option value="inProgress">In progress</option>
+                  <option value="done">Done</option>
                 </select>
               </div>
-              <div class="small-4 columns">
+              <div class="small-8 small-centered medium-uncentered medium-4 columns">
                 <select class="colorSelect">
-                  <option value="yellow">yellow</option>
-                  <option value="pink">pink</option>
-                  <option value="green">green</option>
-                  <option value="orange">orange</option>
-                  <option value="blue">blue</option>
+                  <option value="yellow">Yellow</option>
+                  <option value="pink">Pink</option>
+                  <option value="green">Green</option>
+                  <option value="orange">Orange</option>
+                  <option value="blue">Blue</option>
                 </select>
               </div>
-              <div class="small-4 columns">
+              <div class="small-8 small-centered medium-uncentered medium-4 columns">
                 <select name='privacy' class="privacySelect">
-                  <option value="public">public</option>
-                  <option value="private">private</option>
+                  <option value="public">Public</option>
+                  <option value="private">Private</option>
                 </select>
               </div>
             </div>
 
-            <input type="submit" value='Save Changes' class="button editTaskSubmit">
+            <input type="submit" value='Save Changes' class="button taskSubmitButton">
             <button class='archiveTask'>Archive</button>
         </form>
         <a class="close-reveal-modal" aria-label="Close">&#215;</a>
