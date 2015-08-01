@@ -48,19 +48,27 @@ body{
 
   #navLogo > img{
     width: 75%;
+    margin-left: 5%;
+
+    @media #{$medium}{
+      width: 200px;
+      padding-top: 2px;
+      margin-left: 10%;
+    }
   }
 
-  #navText > h1{
+  #navRightText{
+    margin-right: 5%;
     text-align: right;
-    font-size: 1.7em;
+    font-size: 1em;
     line-height: 27px;
 
     @media #{$medium, $large}{
-      line-height: 38px;
-      font-size: 2.2em;
+      font-size: 1.6em;
+      line-height: 37px;
       margin-right: 10%;
-    }
 
+    }
   }
 
 
@@ -403,71 +411,83 @@ Profile Section
 
 
 
-// /*
-// Welcome Page/Register / Login page
-// */
-// .welcome_heading{
-//   margin-top: 2%;
-//   margin-bottom: 2%;
-// }
-// .welcome_heading > h1{
-//   text-align: center;
-//   font-size: 2em;
-//   text-shadow: 0px 2px 2px black;
-//   color: #FFFFFF;
-// }
+/*
+Welcome Page/Register / Login page
+*/
 
-// .entry_portal_house{
-//   padding: 0 15%;
-// }
+.welcome_heading{
+  margin-top: 2%;
+  margin-bottom: 2%;
 
-// .register_house{
-//   padding: 0 8%;
-// }
+  > h1{
+    text-align: center;
+    font-size: 2.5em;
+    text-shadow: 0px 2px 2px black;
+    color: #FFFFFF;
+    font-weight: 700;
+  }
 
-// .register_house > h2{
-//   font-size: 1.5em;
-//   font-weight: 700;
-//   letter-spacing: 1px;
-//   text-shadow: 0px 2px 2px black;
-//   color: #FFFFFF;
-// }
+}
 
-// .login_house{
-//   padding: 0 8%;
-// }
+.entry_portal_house{
+  padding: 0 15%;
 
-// .login_house > h2{
-//   font-size: 1.5em;
-//   font-weight: 700;
-//   letter-spacing: 1px;
-//   text-shadow: 0px 2px 2px black;
-//   color: #FFFFFF;
-// }
+  .register_house{
+    padding: 0 8%;
 
-// .entry_input{
-//   border-radius: 15px !important;
-// }
+    > h2{
+      font-size: 2em;
+      letter-spacing: 1px;
+      text-shadow: 0px 2px 2px black;
+      color: #FFFFFF;
+    }
+  }
 
-// .entry_submit{
-//   border-radius: 15px !important;
-//   border: none;
-//   width: 100px;
-//   height: 35px;
-//   background-color: black;
-//   color: #FFFFFF;
-// }
+  .login_house{
+    padding: 0 8%;
+    margin-bottom: 2%;
 
-// .entry_submit:hover{
-//   background-color: white;
-//   color: #000000;
-// }
+    > h2{
+      font-size: 2em;
+      // font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 0px 2px 2px black;
+      color: #FFFFFF;
+    }
+  }
 
-// input.error{
-//   background-color:rgb(255, 231, 231);
-// }
+  .entry_input{
+    border-radius: 15px !important;
+  }
 
-// .error{
-//   background-color: #FFFFFF;
-//   border-radius: 15px;
-// }
+  .entry_submit{
+    border-radius: 15px !important;
+    border: none;
+    width: 100px;
+    height: 35px;
+    background-color: black;
+    color: #FFFFFF;
+  }
+
+  .entry_submit:hover{
+    background-color: white;
+    color: #000000;
+  }
+
+  input.error{
+    background-color:rgb(255, 231, 231);
+  }
+
+  .error{
+    background-color: #FFFFFF;
+    border-radius: 15px;
+  }
+
+
+
+}
+
+
+
+
+
