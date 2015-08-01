@@ -246,7 +246,16 @@ Template.task.events({
       }
       return false;
     }
-  }
+  },
+  'click .commentsIcon' : function(evt, tmpl){
+    var containerId = '#commentContainer'+tmpl.data._id;
+    var hidden = $(containerId).hasClass('hidden');
+    if(hidden){
+      $(containerId).removeClass('hidden');
+    }else{
+      $(containerId).addClass('hidden');
+    }
 
+  }
 
 });
