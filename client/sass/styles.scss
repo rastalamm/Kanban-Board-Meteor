@@ -1,35 +1,21 @@
 //Variables
+$mainBackground : url('../images/roughwood.jpeg');
 $yellowNoteBackground : url('../images/sticky-note-yellow-copy.png');
 $blueNoteBackground : url('../images/sticky-note-blue.png');
 $pinkNoteBackground : url('../images/sticky-note-pink.png');
 $orangeNoteBackground : url('../images/sticky-note-orange.png');
 $greenNoteBackground : url('../images/sticky-note-green.png');
 $yellowNoteBackgroundWithCurl : url('../images/sticky-note-yellow.png');
-$mainBackground : url('../images/roughwood.jpeg');
 
-
+// Media Queries
 $small : "only screen and (max-width: 640px)";
 $medium : "only screen and (min-width: 641px) and (max-width: 1024px)";
 $large : "only screen and (min-width: 1025px)";
-
-// $small-breakpoint:  em-calc(940)  !default;
-// $medium-breakpoint: em-calc(941) !default;
-// $small-range:   (0, $small-breakpoint) !default; /* 0, 640px */
-// $medium-range:  ($small-breakpoint  + em-calc(1), $medium-breakpoint) !default; /* 641px, 1024px */
-
-
-// // Media Queries
-// $screen: "only screen" !default;
-
-// $landscape: "#{$screen} and (orientation: landscape)" !default;
-// $portrait: "#{$screen} and (orientation: portrait)" !default;
-
 
 body{
   background-image: $mainBackground;
   background-size: cover;
 }
-
 
 .navbar{
   padding-top: 10px;
@@ -39,7 +25,6 @@ body{
 
   @media #{$medium, $large}{
     height: 70px;
-
   }
 
   #navLogo > h1{
@@ -67,17 +52,14 @@ body{
       font-size: 1.6em;
       line-height: 37px;
       margin-right: 10%;
-
     }
   }
-
 
   #navUserName{
     text-align: center;
     font-weight: 500;
     font-size: 1.7em;
     line-height: 38px;
-
 
     @media #{$small, $medium}{
       margin-top: 2%;
@@ -88,10 +70,7 @@ body{
     }
   }
 
-
-
   #navButtonContainer{
-
     font-size: 1em;
     line-height: 33px;
     text-align: right;
@@ -113,8 +92,6 @@ body{
       margin-left: 3%;
     }
   }
-
-
 }
 
 #newTaskButton{
@@ -145,7 +122,6 @@ body{
   color: #FFFFFF;
   box-shadow: 10px -10px 30px #000000;
 }
-
 
 #archiveTaskButton{
   z-index: 1000;
@@ -179,9 +155,6 @@ body{
   color: #FFFFFF;
   box-shadow: -10px -10px 30px #000000;
 }
-
-
-
 
 .mainBodyContent{
   width: 100%;
@@ -273,9 +246,7 @@ body{
       height: 35px;
     }
   }
-
 }
-
 
 #newTaskModal, #editTaskModal{
   width: 75%;
@@ -299,20 +270,12 @@ body{
 
 .archiveTask{
   background-color: red;
-  // float: right;
 }
-
-
-
-
 
 
 /*
 Profile Section
 */
-
-
-
 
 .profile_top_row{
   margin-bottom: 3%;
@@ -403,8 +366,6 @@ Profile Section
   }
 }
 
-
-
 /*
 Welcome Page/Register / Login page
 */
@@ -476,12 +437,4 @@ Welcome Page/Register / Login page
     background-color: #FFFFFF;
     border-radius: 15px;
   }
-
-
-
 }
-
-
-
-
-
