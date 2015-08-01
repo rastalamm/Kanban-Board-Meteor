@@ -19,19 +19,11 @@ Template.task.rendered = function(){
 
 Template.dashboard.helpers({
   toDoTasks: function(){
-    var returnArray;
-    if(Router.current().route.getName() === 'dashboard'){
-      returnArray = TaskCollection.find({userId: Meteor.userId(), status: 'todo'}).fetch();
-      var watching = Meteor.user().watching;
-//adding watched tasks
-      watching.forEach(function(watchingId){
-        returnArray.push(TaskCollection.findOne({_id:watchingId}))
-      })
-
+   if(Router.current().route.getName() === 'dashboard'){
+      return TaskCollection.find({userId: Meteor.userId(), status: 'todo'});
     }else if(Router.current().route.getName() === 'globaldashboard'){
-      returnArray = TaskCollection.find({status: 'todo' , privacy: 'public'});
+      return TaskCollection.find({status: 'todo' , privacy: 'public'});
     }
-    return returnArray;
  },
 
   inProgressTasks: function(){
@@ -269,16 +261,20 @@ Template.task.events({
     }
   },
   'click .taskStarButton' : function(evt, tmpl){
-    var watchArray = Meteor.user().watching;
+    alert('we are working on this feature')
+    // var watchArray = Meteor.user().watching;
+    // if(!watchArray){
+    //   var watchArray = [];
+    // }
 
-    if(watchArray.indexOf(tmpl.data._id) > 0){
-      //remove from object
-      watchArray.slice(watchArray.indexOf(tmpl.data._id),1)
-    }
-    else{
-      watchArray.push(tmpl.data._id)
-    }
-    Meteor.users.update({_id:Meteor.userId()},{$set:{watching:watchArray}})
+    // if(watchArray.indexOf(tmpl.data._id) > 0){
+    //   //remove from object
+    //   watchArray.slice(watchArray.indexOf(tmpl.data._id),1)
+    // }
+    // else{
+    //   watchArray.push(tmpl.data._id)
+    // }
+    // Meteor.users.update({_id:Meteor.userId()},{$set:{watching:watchArray}})
     // TaskCollection.update({_id:tmpl.data._id},{$set:{watchers:watchObject}})
   }
 
