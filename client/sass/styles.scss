@@ -210,6 +210,7 @@ ul li{
     }
 
     .taskTitle{
+      height: 35px;
       font-size: 1.3em;
       text-align: center;
       padding-bottom: 2%;
@@ -219,10 +220,11 @@ ul li{
       box-shadow: none;
       overflow: hidden;
       white-space: nowrap;
+      margin: 0;
     }
 
     .taskBody{
-      height: 150px;
+      height: 175px;
       overflow: hidden;
       background-color: transparent;
       box-shadow: none;
@@ -232,6 +234,20 @@ ul li{
 
     .taskButtonRow{
       height: 40px;
+      margin-bottom: 15%;
+
+      #taskStar{
+        background-image: url('../images/star.svg');
+        background-size: cover;
+        width: 25px;
+        height: 25px;
+        margin: auto;
+      }
+
+      #taskStar:hover{
+        width: 30px;
+        height: 30px;
+      }
 
 
       .taskEdit{
