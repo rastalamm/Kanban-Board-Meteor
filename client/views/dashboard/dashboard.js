@@ -19,8 +19,9 @@ Template.task.rendered = function(){
 
 Template.dashboard.helpers({
   toDoTasks: function(){
+    console.log('returning tasks: ',TaskCollection.find({userId: Meteor.userId(), status: 'todo'}).fetch())
    if(Router.current().route.getName() === 'dashboard'){
-      return TaskCollection.find({userId: Meteor.userId(), status: 'todo'});
+      return TaskCollection.find({userId: Meteor.userId(), status: 'todo'}).fetch();
     }else if(Router.current().route.getName() === 'globaldashboard'){
       return TaskCollection.find({status: 'todo' , privacy: 'public'});
     }
@@ -81,6 +82,9 @@ Template.comment.helpers({
   },
   commentId: function(){
     return this._id;
+  },
+  commentDate: function(){
+    return moment(this.added).calendar();
   }
 })
 
