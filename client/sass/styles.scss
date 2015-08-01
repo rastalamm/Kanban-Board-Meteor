@@ -80,7 +80,6 @@ body{
 
 
     @media #{$small, $medium}{
-
       margin-top: 2%;
       font-weight: 700;
       letter-spacing: 2px;
@@ -188,9 +187,6 @@ body{
   width: 100%;
   text-align: center;
 
-  .taskRow{
-    border: 1px solid white;
-  }
 
   .taskColHeader > h1 {
     font-size: 2em;
@@ -246,12 +242,10 @@ body{
 
     .taskBody{
       height: 150px;
-      border: 1px solid black;
       overflow: hidden;
     }
 
     .taskButtonRow{
-      border: 1px solid black;
       height: 40px;
     }
 
