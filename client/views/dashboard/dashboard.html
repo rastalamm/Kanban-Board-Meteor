@@ -41,6 +41,13 @@
   </div>
  </template>
 
+ <template name='comment'>
+   <li class="commentElement">
+     <span class='commentAuthor' >{{commentAuthor}}</span>
+     <span class='commentBody' >{{commentBody}}</span>
+   </li>
+ </template>
+
 
  <template name='task'>
   <div class={{currentColor}} id={{_id}}>
@@ -91,6 +98,9 @@
             <div id="panel1d" class="content active" role="tabpanel" aria-labelledby="panel1d-heading">
               Panel 1. Lorem ipsum dolor
               <ul class="commentContainer">
+              {{#each commentArray}}
+                {{> comment}}
+               {{/each}}
 
               </ul>
             </div>

@@ -14,23 +14,6 @@ Template.dashboard.destroyed = function(){
 
 
 Template.task.rendered = function(){
-  var taskComments = CommentCollection.find({taskId:this.data._id}).fetch();
-  console.log('taskComments',taskComments);
-    var commentElements = '';
-    _.each(taskComments,function(comment){
-      commentElements +=
-        '<li class="commentElement" id='
-        +comment._id
-        +'><span class="commentAuthor">'
-        +comment.username
-        +':&nbsp;</span><span class="commentBody">'
-        +comment.body
-        +'</span></li>';
-    });
-    console.log(commentElements)
-  var theId = '#'+this.data._id;
-    // console.log(this.data._id);
-    $(theId+' .commentContainer').append('<li>hello</li>');
 };
 
 Template.dashboard.helpers({
@@ -77,8 +60,23 @@ Template.task.helpers({
   },
   taskOwner: function(){
     return this.username;
+  },
+  commentArray: function(){
+    var taskComments = CommentCollection.find({taskId:this._id}).fetch();
+    console.log('taskComments',taskComments);
+    return taskComments;
   }
 });
+
+Template.comment.helpers({
+  commentAuthor: function(){
+    console.log('the comment',this);
+    return this.username;
+  },
+  commentBody: function(){
+    return this.body;
+  }
+})
 
 Template.dashboard.events({
   'click #archiveTaskButton' : function(evt, tmpl){
@@ -237,7 +235,7 @@ Template.task.events({
       if(newComment){
         CommentCollection.insert({
           userId: Meteor.userId(),
-          username: Meteor.user(),
+          username: Meteor.user().username,
           taskId: tmpl.data._id,
           body: newComment,
           added: Date.now()
