@@ -7,37 +7,42 @@
       {{> newTaskTemplate}}
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   </div>
-{{#if localDashboard}}
-  <div id="archiveTaskButton"></div>
-{{/if}}
+
+  {{#if localDashboard}}
+    <div id="archiveTaskButton"></div>
+  {{/if}}
+
   <div class="dashboardOfTasks row">
+
     <div class="taskRow small-12 large-4 columns" >
       <div class="taskColHeader">
         <h1>To Do</h1>
+        </div>
+          {{#each toDoTasks}}
+            {{> task}}
+          {{/each}}
       </div>
-      {{#each toDoTasks}}
-        {{> task}}
-      {{/each}}
-    </div>
 
     <div class="taskRow small-12 large-4 columns" id="inProgressCol">
       <div class="taskColHeader">
         <h1>In Progress</h1>
       </div>
+
       {{#each inProgressTasks}}
         {{> task}}
       {{/each}}
+
     </div>
 
     <div class="taskRow small-12 large-4 columns" id="doneCol">
       <div id="doneButton" class="taskColHeader">
         <h1 >Done</h1>
       </div>
+
       {{#each doneTasks}}
         {{> task}}
       {{/each}}
     </div>
-
   </div>
  </template>
 
@@ -78,15 +83,22 @@
     {{/if}}
     </div>
     <div class='taskButtonRow row'>
+
       {{#if myTask}}
         <div class='taskEditButton small-4 columns'>
           {{> editTaskTemplate}}
         </div>
+      {{else}}
+        <div class='taskStarButton small-4 columns'>
+          <div id="taskStar"></div>
+        </div>
+      {{/if}}
 
         <div class="commentsIconHouse small-4 columns">
           <div id='commentButton{{_id}}' class="commentsIcon">33</div>
         </div>
 
+      {{#if myTask}}
         <div class="small-4 columns">
           <a href="" class="moveTaskAlong">
           {{#if complete}}
@@ -96,13 +108,18 @@
           {{/if}}
           </a>
         </div>
+      {{/if}}
+
+      {{#if myTask}}
       {{else}}
-        <div class="taskOwnerBox small-12 columns">
-          <p class="taskOwnerName">
-            {{taskOwner}}
-          </p>
+      <div class="taskOwnerBox small-4 columns">
+        <p class="taskOwnerName">
+          {{taskOwner}}
+        </p>
       </div>
-    {{/if}}
+      {{/if}}
+
+
     </div>
 
     <div class="commentContainer row hidden" id="commentContainer{{_id}}">

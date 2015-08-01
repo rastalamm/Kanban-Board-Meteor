@@ -27,7 +27,9 @@
         <h1 id='navUserName'>{{username}}'s Kan Board</h1>
       </a>
     {{else}}
-      <h1 id='navUserName'>Community Kan Board</h1>
+      <a href="{{pathFor route='profile'}}">
+        <h1 id='navUserName'>Community Kan Board</h1>
+      </a>
     {{/if}}
     </div>
 
