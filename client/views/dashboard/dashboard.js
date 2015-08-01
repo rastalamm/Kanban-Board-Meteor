@@ -70,11 +70,13 @@ Template.task.helpers({
 
 Template.comment.helpers({
   commentAuthor: function(){
-    console.log('the comment',this);
     return this.username;
   },
   commentBody: function(){
     return this.body;
+  },
+  commentId: function(){
+    return this._id;
   }
 })
 
