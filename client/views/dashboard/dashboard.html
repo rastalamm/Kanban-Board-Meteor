@@ -53,17 +53,20 @@
   <div class={{currentColor}} id={{_id}}>
     <div class="taskTitleContainer">
     {{#if myTask}}
-      <h2 class="taskTitle" contenteditable='true'>{{title}}</h2>
+      <input class="taskTitle" type='text' value={{title}}>
     {{else}}
-    <h2 class="taskTitle" >{{title}}</h2>
+    <input class="taskTitle" readonly="readonly" value={{title}} >
     {{/if}}
     </div>
 
     <div class="taskBodyContainer">
     {{#if myTask}}
-      <p class='taskBody' contenteditable='true'>{{body}}</p>
+      <!-- <p class='taskBody' contenteditable='true'>{{body}}</p> -->
+      <textarea class='taskBody'>{{body}}</textarea>
     {{else}}
-      <p class='taskBody'>{{body}}</p>
+      <!-- <p class='taskBody'>{{body}}</p> -->
+      <textarea class='taskBody' readonly="readonly">{{body}}</textarea>
+
     {{/if}}
     </div>
     <div class='taskButtonRow row'>
@@ -105,9 +108,7 @@
 
               </ul>
             </div>
-            <div class="addCommentField">
-              <input name='commentInput' class='addCommentInput' type="text">
-            </div>
+
           </li>
         </ul>
       </div>
