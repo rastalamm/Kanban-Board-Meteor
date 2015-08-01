@@ -8,15 +8,15 @@
 
       <div id="user_task_count" class="small-9 columns">
         <div class="row">
-          <div class="task_count_box small-4 columns">
+          <div class="task_count_box small-4 medium-4 columns">
             <h3>To Do</h3>
             <p class="tasknumber">{{todoCount}}</p>
           </div>
-          <div class="task_count_box small-4 columns">
+          <div class="task_count_box small-5 medium-4 columns">
             <h3>In Progress</h3>
             <p class="tasknumber">{{inProgressCount}}</p>
           </div>
-          <div class="task_count_box small-4 columns">
+          <div class="task_count_box small-3 medium-4 columns">
             <h3>Done</h3>
             <p class="tasknumber">{{doneCount}}</p>
           </div>
@@ -24,59 +24,60 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="profile_main small-8 small-offset-2 columns">
-        <div class="profile_main_row row">
+
+      <div class="row" id="profileDetailsSection">
+
           <div class="profile_label small-6 columns">
             <h2>Email</h2>
           </div>
+
           <div class="profile_input small-6 columns">
             <p class='email' >{{email}}</p>
           </div>
-        </div>
 
-        <div class="profile_main_row row">
+
           <div class="profile_label small-6 columns">
-            <h2  >Username</h2>
+            <h2>Username</h2>
 
           </div>
+
           <div class="profile_input small-6 columns">
             <p class='userName'>
               {{username}}
-            <a href="" class="editUsername">     edit username</a>
             </p>
           </div>
-        </div>
-        <div class="profile_main_row row">
+
+
           <div class="profile_label small-6 columns">
             <h2>Password</h2>
           </div>
+
           <div class="profile_input small-6 columns">
             <p>
-
-              <a class='editPassword'>change your password</a>
+              ***********
             </p>
           </div>
-        </div>
-        <div class="profile_main_row row">
+
+
           <div class="profile_label small-6 columns">
             <h2>First Name</h2>
           </div>
+
           <div class="profile_input small-6 columns">
             <p class='firstName' contenteditable='true'>{{firstName}}</p>
           </div>
-        </div>
 
-        <div class="profile_main_row row">
+
+
           <div class="profile_label small-6 columns">
             <h2>Last Name</h2>
           </div>
           <div class="profile_input small-6 columns">
             <p class='lastName' contenteditable='true'>{{lastName}}</p>
           </div>
-        </div>
+
       </div>
-    </div>
+
 
 
 </template>

@@ -1,0 +1,487 @@
+//Variables
+$yellowNoteBackground : url('../images/sticky-note-yellow-copy.png');
+$blueNoteBackground : url('../images/sticky-note-blue.png');
+$pinkNoteBackground : url('../images/sticky-note-pink.png');
+$orangeNoteBackground : url('../images/sticky-note-orange.png');
+$greenNoteBackground : url('../images/sticky-note-green.png');
+$yellowNoteBackgroundWithCurl : url('../images/sticky-note-yellow.png');
+$mainBackground : url('../images/roughwood.jpeg');
+
+
+$small : "only screen and (max-width: 640px)";
+$medium : "only screen and (min-width: 641px) and (max-width: 1024px)";
+$large : "only screen and (min-width: 1025px)";
+
+// $small-breakpoint:  em-calc(940)  !default;
+// $medium-breakpoint: em-calc(941) !default;
+// $small-range:   (0, $small-breakpoint) !default; /* 0, 640px */
+// $medium-range:  ($small-breakpoint  + em-calc(1), $medium-breakpoint) !default; /* 641px, 1024px */
+
+
+// // Media Queries
+// $screen: "only screen" !default;
+
+// $landscape: "#{$screen} and (orientation: landscape)" !default;
+// $portrait: "#{$screen} and (orientation: portrait)" !default;
+
+
+body{
+  background-image: $mainBackground;
+  background-size: cover;
+}
+
+
+.navbar{
+  padding-top: 10px;
+  border-bottom: 5px solid;
+  background-color: #FFFFFF;
+  height: 55px;
+
+  @media #{$medium, $large}{
+    height: 70px;
+
+  }
+
+  #navLogo > h1{
+    display: none;
+  }
+
+  #navLogo > img{
+    width: 75%;
+    margin-left: 5%;
+
+    @media #{$medium}{
+      width: 200px;
+      padding-top: 2px;
+      margin-left: 10%;
+    }
+  }
+
+  #navRightText{
+    margin-right: 5%;
+    text-align: right;
+    font-size: 1em;
+    line-height: 27px;
+
+    @media #{$medium, $large}{
+      font-size: 1.6em;
+      line-height: 37px;
+      margin-right: 10%;
+
+    }
+  }
+
+
+  #navUserName{
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.7em;
+    line-height: 38px;
+
+
+    @media #{$small, $medium}{
+      margin-top: 2%;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-shadow: 0px 2px 2px black;
+      color: #FFFFFF;
+    }
+  }
+
+
+
+  #navButtonContainer{
+
+    font-size: 1em;
+    line-height: 33px;
+    text-align: right;
+
+    @media #{$medium, $large}{
+      line-height: 45px;
+     font-size: 1.2em;
+    }
+
+    #navGlobalDashboardLink{
+      margin-left: 3%;
+    }
+
+    #navProfileLink{
+      margin-left: 3%;
+    }
+
+    #navLogOutLink{
+      margin-left: 3%;
+    }
+  }
+
+
+}
+
+#newTaskButton{
+  z-index: 1000;
+  position: fixed;
+  bottom: -10px;
+  left: -13px;
+  width: 75px;
+  height: 75px;
+  background-color: #2db34a;
+  font-size: 4em;
+  line-height: 60px;
+  border-radius: 58%;
+  color: #FFFFFF;
+  border: 3px solid #FFFFFF;
+  box-shadow: 5px -5px 20px #000000;
+}
+
+#newTaskButton:hover{
+  z-index: 1000;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 125px;
+  height: 125px;
+  line-height: 100px;
+  font-size: 6em;
+  color: #FFFFFF;
+  box-shadow: 10px -10px 30px #000000;
+}
+
+
+#archiveTaskButton{
+  z-index: 1000;
+  background-image: url('../images/flame.png');
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  bottom: -10px;
+  right: -13px;
+  width: 75px;
+  height: 75px;
+  background-color: red;
+  font-size: 4em;
+  line-height: 60px;
+  border-radius: 58%;
+  color: #FFFFFF;
+  border: 3px solid #FFFFFF;
+  box-shadow: -5px -5px 20px #000000;
+}
+
+#archiveTaskButton:hover{
+  z-index: 1000;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  width: 125px;
+  height: 125px;
+  line-height: 100px;
+  font-size: 6em;
+  color: #FFFFFF;
+  box-shadow: -10px -10px 30px #000000;
+}
+
+
+
+
+.mainBodyContent{
+  width: 100%;
+  text-align: center;
+
+
+  .taskColHeader > h1 {
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-shadow: 0px 2px 2px black;
+    color: #FFFFFF;
+  }
+
+  .yellow{
+    background-image: $yellowNoteBackground;
+  }
+
+  .blue{
+    background-image: $blueNoteBackground;
+  }
+
+  .pink{
+    background-image: $pinkNoteBackground;
+  }
+
+  .orange{
+    background-image: $orangeNoteBackground;
+  }
+
+  .green{
+    background-image: $greenNoteBackground;
+  }
+
+  .taskHouse{
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    margin-bottom: 5%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.5);
+    padding: 1% 2%;
+
+    @media #{$large}{
+      padding: 2% 5%;
+
+    }
+
+    .taskTitle{
+      font-size: 1.3em;
+      text-align: center;
+      padding-bottom: 2%;
+      border-bottom: 1px dashed black;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .taskBody{
+      height: 150px;
+      overflow: hidden;
+    }
+
+    .taskButtonRow{
+      height: 40px;
+    }
+
+    .taskEdit{
+      background-image: url('../images/pencil.svg');
+      background-size: cover;
+      width: 25px;
+      height: 25px;
+    }
+
+    .taskEdit:hover{
+      width: 30px;
+      height: 30px;
+    }
+
+    #statusImage{
+      background-image: url('../images/rightarrow.svg');
+      background-size: cover;
+      width: 30px;
+      height: 30px;
+    }
+
+    #statusImage:hover{
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+}
+
+
+#newTaskModal, #editTaskModal{
+  width: 75%;
+  margin: auto 12.5%;
+  text-align: center;
+
+  @media #{$medium}{
+    margin: auto;
+    max-width: 65%;
+  }
+
+  @media #{$large}{
+    width: 35%;
+    margin: auto;
+  }
+
+  .taskSubmitButton{
+    background-color: #2db34a;
+  }
+}
+
+.archiveTask{
+  background-color: red;
+  // float: right;
+}
+
+
+
+
+
+
+/*
+Profile Section
+*/
+
+
+
+
+.profile_top_row{
+  margin-bottom: 3%;
+
+  @media #{$large}{
+    margin-top: 3%;
+  }
+
+  #profile_image > img{
+
+    width: 75px;
+    height: 75px;
+    border-radius: 51%;
+    margin-top: 8%;
+
+    @media #{$medium}{
+      width: 133px;
+      height: 133px;
+    }
+
+    @media #{$large}{
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  .task_count_box > h3{
+    text-shadow: 0px 2px 2px black;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    font-size: 1em;
+
+    @media #{$medium, $large}{
+      font-size: 1.4em;
+    }
+  }
+
+  .tasknumber{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1em;
+    margin: auto;
+    background-image: $yellowNoteBackgroundWithCurl;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: -2px -2px 10px #000000;
+
+    @media #{$medium, $large}{
+      width: 65px;
+      height: 65px;
+      line-height: 65px;
+      font-size: 1.5em;
+    }
+  }
+}
+
+#profileDetailsSection{
+  margin-bottom: 3%;
+
+  .profile_label > h2{
+    font-size: 1em;
+    text-align: right;
+    font-weight: 700;
+    text-shadow: 0px 2px 2px black;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    overflow: hidden;
+    white-space: nowrap;
+
+    @media #{$medium, $large}{
+      font-size: 1.5em;
+    }
+  }
+
+  .profile_input > p{
+    font-size: 1em;
+    text-align: left;
+    text-shadow: 0px 2px 2px black;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    overflow: hidden;
+    white-space: nowrap;
+
+    @media #{$medium, $large}{
+      font-size: 1.5em;
+    }
+  }
+}
+
+
+
+/*
+Welcome Page/Register / Login page
+*/
+
+.welcome_heading{
+  margin-top: 2%;
+  margin-bottom: 2%;
+
+  > h1{
+    text-align: center;
+    font-size: 2.5em;
+    text-shadow: 0px 2px 2px black;
+    color: #FFFFFF;
+    font-weight: 700;
+  }
+
+}
+
+.entry_portal_house{
+  padding: 0 15%;
+
+  .register_house{
+    padding: 0 8%;
+
+    > h2{
+      font-size: 2em;
+      letter-spacing: 1px;
+      text-shadow: 0px 2px 2px black;
+      color: #FFFFFF;
+    }
+  }
+
+  .login_house{
+    padding: 0 8%;
+    margin-bottom: 2%;
+
+    > h2{
+      font-size: 2em;
+      // font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 0px 2px 2px black;
+      color: #FFFFFF;
+    }
+  }
+
+  .entry_input{
+    border-radius: 15px !important;
+  }
+
+  .entry_submit{
+    border-radius: 15px !important;
+    border: none;
+    width: 100px;
+    height: 35px;
+    background-color: black;
+    color: #FFFFFF;
+  }
+
+  .entry_submit:hover{
+    background-color: white;
+    color: #000000;
+  }
+
+  input.error{
+    background-color:rgb(255, 231, 231);
+  }
+
+  .error{
+    background-color: #FFFFFF;
+    border-radius: 15px;
+  }
+
+
+
+}
+
+
+
+
+

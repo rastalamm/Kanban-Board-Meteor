@@ -10,6 +10,7 @@ iron:router
 accounts-ui
 accounts-password
 benjaminrh:event-hooks
+themeteorchef:jquery-validation
+fourseven:scss
 nsmeta:zurb-foundation
 ewall:foundation
-themeteorchef:jquery-validation
