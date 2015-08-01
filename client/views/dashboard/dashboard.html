@@ -42,10 +42,18 @@
  </template>
 
  <template name='comment'>
-   <li class="commentElement">
-     <span class='commentAuthor' >{{commentAuthor}}</span>
-     <span class='commentBody' >{{commentBody}}</span>
-   </li>
+
+    <div class="row commentsRow">
+      <div class="small-6 columns commentAuthor">
+        {{commentAuthor}} says:
+      </div>
+      <div class="small-6 columns commentsDate">
+        January, 24th 1989
+      </div>
+      <div class="small-12 columns">
+        <p class="commentBody">{{commentBody}}</p>
+      </div>
+    </div>
  </template>
 
 
@@ -73,7 +81,7 @@
         </div>
 
         <div class="commentsIconHouse small-4 columns">
-          <p id="commentsIcon">33</p>
+          <div class="commentsIcon">33</div>
         </div>
 
         <div class="small-4 columns">
@@ -93,32 +101,19 @@
       </div>
     {{/if}}
     </div>
-  </div>
 
-
-<!-- <div id="commentsIcon">33
-
-    <div class="row comments_section">
-      <div class="small-12">
-        <ul class="accordion" data-accordion role="tablist">
-          <li class="accordion-navigation">
-            <a href='#accordion{{_id}}' role="tab" id="panel1d-heading" aria-controls="panel1d">Accordion 1</a>
-            <div id='accordion{{_id}}' class="content active" role="tabpanel" aria-labelledby="panel1d-heading">
-
-              Panel 1. Lorem ipsum dolor
-              <ul class="commentContainer">
-              {{#each commentArray}}
-                {{> comment}}
-               {{/each}}
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
+    <div class="commentContainer row" id="commentContainer{{_id}}">
+      <h3 id="commentsHeading">Comments</h3>
+        {{#each commentArray}}
+          {{> comment}}
+         {{/each}}
+         <div class="row">
+           <div class="small-12 columns">
+             <input type="text" class="addCommentInput">
+           </div>
+         </div>
     </div>
-
-  </div> -->
-
+  </div>
 
 
  </template>

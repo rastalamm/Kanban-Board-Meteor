@@ -6,6 +6,7 @@ $pinkNoteBackground : url('../images/sticky-note-pink.png');
 $orangeNoteBackground : url('../images/sticky-note-orange.png');
 $greenNoteBackground : url('../images/sticky-note-green.png');
 $yellowNoteBackgroundWithCurl : url('../images/sticky-note-yellow.png');
+$linedpaper : url('../images/groovepaper.png');
 
 // Media Queries
 $small : "only screen and (max-width: 640px)";
@@ -15,6 +16,10 @@ $large : "only screen and (min-width: 1025px)";
 body{
   background-image: $mainBackground;
   background-size: cover;
+}
+
+ul li{
+  list-style: none;
 }
 
 .navbar{
@@ -58,7 +63,7 @@ body{
   #navUserName{
     text-align: center;
     font-weight: 500;
-    font-size: 1.7em;
+    font-size: 1.6em;
     line-height: 38px;
 
     @media #{$small, $medium}{
@@ -235,7 +240,7 @@ body{
         height: 30px;
       }
 
-      #commentsIcon{
+      .commentsIcon{
         background-image: url('../images/comments.png');
         background-size: cover;
         width: 30px;
@@ -243,7 +248,7 @@ body{
         margin: auto;
       }
 
-      #commentsIcon:hover{
+      .commentsIcon:hover{
         background-image: url('../images/comments.png');
         background-size: cover;
         width: 35px;
@@ -280,6 +285,51 @@ body{
 
     }
 
+
+    .commentContainer{
+      background-image: $linedpaper;
+      box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.5);
+      padding: 0 6%;
+
+      .hidden{
+        display: none;
+      }
+
+      #commentsHeading{
+        font-size: 1em;
+        border-bottom: 1px dashed black;
+        padding-bottom: 2%;
+      }
+
+      .commentAuthor{
+        font-size: .9em;
+        font-style: italic;
+        font-weight: 500;
+        text-align: left;
+        overflow: hidden;
+        white-space: nowrap;
+
+      }
+
+      .commentsDate{
+        font-size: .9em;
+        font-weight: 500;
+        text-align: left;
+        padding: 0;
+      }
+
+      .commentBody{
+        font-size: .8em;
+        overflow: hidden;
+        text-align: left;
+        width: 100%;
+      }
+
+      .addCommentInput{
+        margin-top: 2%;
+        border-radius: 15px;
+      }
+    }
 
   }
 }
