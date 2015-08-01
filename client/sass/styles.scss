@@ -292,6 +292,10 @@ ul li{
 
     }
 
+    .hidden{
+        display: none;
+      }
+
     .commentContainer{
       background-image: $linedpaper;
       box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.5);
@@ -299,9 +303,7 @@ ul li{
       position: relative;
       z-index: 999;
 
-      .hidden{
-        display: none;
-      }
+
 
       #commentsHeading{
         font-size: 1em;
