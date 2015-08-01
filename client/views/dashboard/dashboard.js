@@ -14,6 +14,7 @@ Template.dashboard.destroyed = function(){
 
 
 Template.task.rendered = function(){
+
 };
 
 Template.dashboard.helpers({
@@ -65,6 +66,9 @@ Template.task.helpers({
     var taskComments = CommentCollection.find({taskId:this._id}).fetch();
     console.log('taskComments',taskComments);
     return taskComments;
+  },
+  commentTotal: function(){
+    return CommentCollection.find({taskId:this._id}).fetch().length;
   }
 });
 
