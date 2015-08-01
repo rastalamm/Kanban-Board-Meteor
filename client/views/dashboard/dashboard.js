@@ -78,13 +78,6 @@ Template.task.helpers({
   taskOwner: function(){
     return this.username;
   }
-  // commentsInsert: function(){
-
-  //   var theId = '#'+this._id;
-  //   console.log('id',theId);
-  //   $(theId+' .commentContainer').append('<li>hello</li>');
-  //   return;
-  // }
 });
 
 Template.dashboard.events({
