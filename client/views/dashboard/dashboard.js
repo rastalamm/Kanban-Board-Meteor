@@ -195,11 +195,9 @@ Template.task.events({
     };
   },
   'keypress .taskTitle': function(evt, tmpl){
-    event.target.blur();
     if(event.keyCode == 13){
       // var newEntry = $(event.target).text();
-      var newEntry = evt.target.innerHTML;
-      console.log('newEntry',newEntry);
+      var newEntry = evt.target.value;
       if(newEntry){
         TaskCollection.update({_id:tmpl.data._id},{$set:{title:newEntry}});
       }else{
@@ -208,14 +206,14 @@ Template.task.events({
       }
       // event.stopPropagation();
       event.preventDefault();
+      event.target.blur();
       return false;
     }
   },
   'keypress .taskBody': function(evt, tmpl){
-    event.target.blur();
     if(event.keyCode == 13){
       // var newEntry = $(event.target).text();
-      var newEntry = evt.target.innerHTML;
+      var newEntry = evt.target.value;
       console.log('newEntry',newEntry);
       if(newEntry){
         TaskCollection.update({_id:tmpl.data._id},{$set:{body:newEntry}});
@@ -225,6 +223,7 @@ Template.task.events({
       }
       // event.stopPropagation();
       event.preventDefault();
+      event.target.blur();
       return false;
     }
   },
