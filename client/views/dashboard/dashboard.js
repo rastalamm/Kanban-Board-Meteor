@@ -147,7 +147,8 @@ Template.editTaskTemplate.events({
     }
 
     function editSubmit(event){
-
+      // event.preventDefault();
+      console.log('sumbmitting edit')
       var newTaskTitle = $(event.target).parent().find('.editTaskTitle').val();
       var newTaskBody = $(event.target).parent().find('.editTaskBody').val();
       var newStatus = $(event.target).parent().find('.editStatus').val();
@@ -242,7 +243,7 @@ Template.task.events({
           body: newComment,
           added: Date.now()
         });
-        console.log('comment added',tmpl.data,Meteor.userId())
+        $(event.target).val('');
       }
       return false;
     }
