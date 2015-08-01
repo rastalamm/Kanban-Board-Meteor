@@ -68,15 +68,18 @@
     </div>
     <div class='taskButtonRow row'>
       {{#if myTask}}
-        <div class='taskEditButton small-4 small-offset-2 columns'>
+        <div class='taskEditButton small-4 columns'>
           {{> editTaskTemplate}}
         </div>
-        <div class="taskArrow small-6 columns">
+        <div class="commentsIconHouse small-4 columns">
+            <p id="commentsIcon">33</p>
+        </div>
+        <div class="small-4 columns">
           <a href="" class="moveTaskAlong">
           {{#if complete}}
-            <img id="statusImage" src="./images/tick.svg">
+            <div id="taskCheck"></div>
           {{else}}
-            <img id="statusImage" src="./images/rightarrow.svg">
+            <div id="taskArrow"></div>
           {{/if}}
           </a>
         </div>
@@ -88,6 +91,7 @@
       </div>
     {{/if}}
     </div>
+  </div>
 
 
 
@@ -102,17 +106,12 @@
               {{#each commentArray}}
                 {{> comment}}
                {{/each}}
-
               </ul>
-            </div>
-            <div class="addCommentField">
-              <input name='commentInput' class='addCommentInput' type="text">
             </div>
           </li>
         </ul>
       </div>
     </div>
-  </div>
 
 
 
