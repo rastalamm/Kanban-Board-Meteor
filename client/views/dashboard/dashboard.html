@@ -71,15 +71,20 @@
     </div>
     <div class='taskButtonRow row'>
       {{#if myTask}}
-        <div class='taskEditButton small-4 small-offset-2 columns'>
+        <div class='taskEditButton small-4 columns'>
           {{> editTaskTemplate}}
         </div>
-        <div class="taskArrow small-6 columns">
+
+        <div class="commentsIconHouse small-4 columns">
+          <p id="commentsIcon">33</p>
+        </div>
+
+        <div class="small-4 columns">
           <a href="" class="moveTaskAlong">
           {{#if complete}}
-            <img id="statusImage" src="./images/tick.svg">
+            <div id="taskCheck"></div>
           {{else}}
-            <img id="statusImage" src="./images/rightarrow.svg">
+            <div id="taskArrow"></div>
           {{/if}}
           </a>
         </div>
@@ -91,8 +96,10 @@
       </div>
     {{/if}}
     </div>
+  </div>
 
 
+<!-- <div id="commentsIcon">33
 
     <div class="row comments_section">
       <div class="small-12">
@@ -100,21 +107,20 @@
           <li class="accordion-navigation">
             <a href='#accordion{{_id}}' role="tab" id="panel1d-heading" aria-controls="panel1d">Accordion 1</a>
             <div id='accordion{{_id}}' class="content active" role="tabpanel" aria-labelledby="panel1d-heading">
+
               Panel 1. Lorem ipsum dolor
               <ul class="commentContainer">
               {{#each commentArray}}
                 {{> comment}}
                {{/each}}
-
               </ul>
             </div>
-
           </li>
         </ul>
       </div>
     </div>
-  </div>
 
+  </div> -->
 
 
 

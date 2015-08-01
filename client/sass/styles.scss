@@ -220,31 +220,67 @@ body{
 
     .taskButtonRow{
       height: 40px;
+
+
+      .taskEdit{
+        background-image: url('../images/pencil.svg');
+        background-size: cover;
+        width: 25px;
+        height: 25px;
+        margin: auto;
+      }
+
+      .taskEdit:hover{
+        width: 30px;
+        height: 30px;
+      }
+
+      #commentsIcon{
+        background-image: url('../images/comments.png');
+        background-size: cover;
+        width: 30px;
+        height: 30px;
+        margin: auto;
+      }
+
+      #commentsIcon:hover{
+        background-image: url('../images/comments.png');
+        background-size: cover;
+        width: 35px;
+        height: 35px;
+        margin: auto;
+        font-size: 1.2em;
+      }
+
+      #taskArrow{
+        background-image: url('../images/rightarrow.svg');
+        background-size: cover;
+        width: 30px;
+        height: 30px;
+        margin: auto;
+      }
+
+      #taskArrow:hover{
+        width: 35px;
+        height: 35px;
+      }
+
+      #taskCheck{
+        background-image: url('../images/tick.svg');
+        background-size: cover;
+        width: 30px;
+        height: 30px;
+        margin: auto;
+      }
+
+      #taskCheck:hover{
+        width: 35px;
+        height: 35px;
+      }
+
     }
 
-    .taskEdit{
-      background-image: url('../images/pencil.svg');
-      background-size: cover;
-      width: 25px;
-      height: 25px;
-    }
 
-    .taskEdit:hover{
-      width: 30px;
-      height: 30px;
-    }
-
-    #statusImage{
-      background-image: url('../images/rightarrow.svg');
-      background-size: cover;
-      width: 30px;
-      height: 30px;
-    }
-
-    #statusImage:hover{
-      width: 35px;
-      height: 35px;
-    }
   }
 }
 
