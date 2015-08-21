@@ -6,29 +6,32 @@ function checkPageWidth(){
 function columnShowHide(){
 
   if(checkPageWidth() < 1025){
+
     $('.inprogressColumn, .doneColumn').hide();
     $('.taskColHeader').addClass('clickToSwitchView')
-  }else if(checkPageWidth() > 1024){
-    $('.inprogressColumn, .doneColumn').show();
-  }
 
+  }else if(checkPageWidth() > 1024){
+    console.log('resized width', checkPageWidth());
+    $('.inprogressColumn, .doneColumn').show();
+    $('.taskColHeader').removeClass('clickToSwitchView')
+
+  }
 
 }
 
 
 Template.dashboard.rendered = function(){
 
-
+  columnShowHide();
 
   $( window ).resize(function() {
+    columnShowHide();
 
+    console.log('true or false', $('.clickToSwitchView').length);
 
-
-    if(pageWidth < 1025){
-      $('.inprogressColumn, .doneColumn').hide();
-    }else if(pageWidth > 1024){
-      $('.inprogressColumn, .doneColumn').show();
-    }
+    $('.clickToSwitchView').click(function (){
+    console.log('clicked');
+    })
 
   });
 
