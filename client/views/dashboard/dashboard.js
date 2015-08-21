@@ -1,5 +1,42 @@
+function checkPageWidth(){
+  console.log('page width', $( window ).width())
+  return $( window ).width()
+}
+
+function columnShowHide(){
+
+  if(checkPageWidth() < 1025){
+    $('.inprogressColumn, .doneColumn').hide();
+    $('.taskColHeader').addClass('clickToSwitchView')
+  }else if(checkPageWidth() > 1024){
+    $('.inprogressColumn, .doneColumn').show();
+  }
+
+
+}
+
 
 Template.dashboard.rendered = function(){
+
+
+
+  $( window ).resize(function() {
+
+
+
+    if(pageWidth < 1025){
+      $('.inprogressColumn, .doneColumn').hide();
+    }else if(pageWidth > 1024){
+      $('.inprogressColumn, .doneColumn').show();
+    }
+
+  });
+
+  $('.clickToSwitchView').click(function (){
+    console.log('clicked');
+  })
+
+
 
 };
 
@@ -15,7 +52,9 @@ Template.dashboard.destroyed = function(){
 
 Template.task.rendered = function(){
 
+
 };
+
 
 Template.dashboard.helpers({
   toDoTasks: function(){
@@ -71,6 +110,7 @@ Template.task.helpers({
     return CommentCollection.find({taskId:this._id}).fetch().length;
   }
 });
+
 
 Template.comment.helpers({
   commentAuthor: function(){
