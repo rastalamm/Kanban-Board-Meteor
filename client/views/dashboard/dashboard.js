@@ -3,6 +3,10 @@ function checkPageWidth(){
   return $( window ).width()
 }
 
+//columns are hidden/show depending on the page width
+//need to scroll through them / turn into a dropdown and show/hide
+//based on the selection
+
 function columnShowHide(){
 
   if(checkPageWidth() < 1025){
