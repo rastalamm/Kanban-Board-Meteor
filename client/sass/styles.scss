@@ -201,7 +201,7 @@ ul li{
     margin-bottom: 5%;
     background-size: cover;
     background-repeat: no-repeat;
-    box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     padding: 1% 2%;
 
     @media #{$large}{
@@ -315,7 +315,10 @@ ul li{
 
     .commentContainer{
       background-image: $linedpaper;
-      box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.5);
+      max-height: 600px;
+      text-overflow: hidden;
+      overflow: scroll;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
       padding: 0 6%;
       position: relative;
       z-index: 999;
