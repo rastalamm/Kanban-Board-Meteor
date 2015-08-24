@@ -12,36 +12,60 @@ function columnShowHide(){
   if(checkPageWidth() < 1025){
 
     $('.inprogressColumn, .doneColumn').hide();
-    $('.taskColHeader').addClass('clickToSwitchView')
+    $('.todoColHeader').addClass('clickToSwitchView')
 
   }else if(checkPageWidth() > 1024){
     console.log('resized width', checkPageWidth());
-    $('.inprogressColumn, .doneColumn').show();
-    $('.taskColHeader').removeClass('clickToSwitchView')
+    $('.inprogressColumn, .doneColumn, .todoColumn').show();
+    $('.taskColHeader, .todoColHeader, .inProgressColHeader').removeClass('clickToSwitchView')
 
   }
 
-}
+};
+
+function clickToSwitchView(){
+
+  $('.clickToSwitchView').click(function (event){
+    if($(event.currentTarget).hasClass('todoColHeader')){
+      $('.todoColumn, .doneColumn').hide();
+      $('.inprogressColumn').show();
+      $('.todoColHeader').removeClass('clickToSwitchView');
+      $('.inProgressColHeader').addClass('clickToSwitchView');
+       clickToSwitchView();
+
+    }
+    else if($(event.currentTarget).hasClass('inProgressColHeader')){
+      $('.todoColumn, .inprogressColumn').hide();
+      $('.doneColumn').show();
+      $('.inProgressColHeader').removeClass('clickToSwitchView');
+      $('.doneColHeader').addClass('clickToSwitchView');
+       clickToSwitchView();
+    }
+    else if($(event.currentTarget).hasClass('doneColHeader')){
+      $('.doneColumn, .inprogressColumn').hide();
+      $('.todoColumn').show();
+      $('.doneColHeader').removeClass('clickToSwitchView');
+      $('.todoColHeader').addClass('clickToSwitchView');
+       clickToSwitchView();
+    };
+
+  });
+};
 
 
 Template.dashboard.rendered = function(){
 
   columnShowHide();
+  clickToSwitchView();
+
 
   $( window ).resize(function() {
     columnShowHide();
-
-    console.log('true or false', $('.clickToSwitchView').length);
-
-    $('.clickToSwitchView').click(function (){
-    console.log('clicked');
-    })
-
   });
 
-  $('.clickToSwitchView').click(function (){
-    console.log('clicked');
-  })
+  // $('.clickToSwitchView').click(function (){
+  //   console.log('clicked');
+  // })
 
 
 
